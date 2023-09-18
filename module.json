@@ -1,0 +1,11 @@
+{
+    "name": "Common",
+    "alias": "common",
+    "description": "",
+    "keywords": [],
+    "priority": 1,
+    "providers": [
+        "Modules\\Common\\Providers\\CommonServiceProvider"
+    ],
+    "files": []
+}

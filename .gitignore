@@ -1,0 +1,15 @@
+.idea/
+.php_cs
+build/
+coverage/
+clover.xml
+psalm.xml
+vendor/
+.DS_Store
+.history/
+cghooks.lock
+composer.lock
+.php_cs.cache
+.phpunit.result.cache
+tests.php
+.php-cs-fixer.cache

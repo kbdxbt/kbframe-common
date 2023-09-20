@@ -7,7 +7,6 @@ namespace Modules\Common\Console;
 use Illuminate\Contracts\Console\Isolatable;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Modules\Common\Enums\HealthCheckStateEnum;
 
 /**
  * @note command php artisan app:init --isolated # 单例执行
@@ -34,7 +33,6 @@ class AppInitCommand extends HealthCheckCommand implements Isolatable
     public function handle(): int
     {
         // todo composer install?
-
         if ($this->environmentCheck()) {
             $this->output->success('environment check passed');
         } else {
@@ -56,18 +54,19 @@ class AppInitCommand extends HealthCheckCommand implements Isolatable
                 return false !== $index ? $index : \count($this->onlyCheck);
             })->pipe(function (Collection $methods) {
                 $methods->map(function ($method) use (&$checks): void {
-                    /** @var HealthCheckStateEnum $state */
-                    $state = \call_user_func([$this, $method->name]);
+                    $result = \call_user_func([$this, $method->name]);
 
                     $checks[] = [
                         'resource' => Str::of($method->name)->replaceFirst('check', ''),
-                        'state' => $state,
-                        'message' => $state->description,
+                        'state' => $result['state'],
+                        'message' => $result['description'],
                     ];
                 });
 
                 return collect($checks);
-            })->filter(fn ($check) => $check['state']->isNot(HealthCheckStateEnum::OK))->whenNotEmpty(function (Collection $notOkChecks) {
+            })
+            ->filter(fn ($check) => $check['state'] !== self::STATE_OK)
+            ->whenNotEmpty(function (Collection $notOkChecks) {
                 foreach ($notOkChecks as $check) {
                     $this->components->error(sprintf('%s:[%s]', $check['resource'], $check['message']));
                 }
@@ -76,7 +75,7 @@ class AppInitCommand extends HealthCheckCommand implements Isolatable
             })->whenEmpty(fn (Collection $notOkChecks) => $notOkChecks)->isEmpty();
     }
 
-    protected function execCommands()
+    protected function execCommands(): bool
     {
         $resourceUsage = catch_resource_usage(function (): void {
             $this->call('migrate');

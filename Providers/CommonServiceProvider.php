@@ -23,11 +23,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
 use Modules\Common\Channels\NotifyChannel;
-use Modules\Common\Console\AppInitCommand;
-use Modules\Common\Console\ClearAllCommand;
-use Modules\Common\Console\DeployCommand;
-use Modules\Common\Console\HealthCheckCommand;
-use Modules\Common\Console\OptimizeAllCommand;
 use Modules\Common\Rules\Rule;
 use Modules\Common\Support\Macros\BlueprintMacro;
 use Modules\Common\Support\Macros\CollectionMacro;
@@ -145,15 +140,13 @@ class CommonServiceProvider extends ServiceProvider
         Str::mixin($this->app->make(StrMacro::class));
     }
 
-    protected function registerCommands()
+    protected function registerCommands(): void
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                AppInitCommand::class,
-                ClearAllCommand::class,
-                DeployCommand::class,
-                HealthCheckCommand::class,
-                OptimizeAllCommand::class,
+                \Modules\Common\Console\AppInitCommand::class,
+                \Modules\Common\Console\DeployCommand::class,
+                \Modules\Common\Console\HealthCheckCommand::class,
             ]);
         }
     }

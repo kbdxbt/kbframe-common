@@ -12,9 +12,11 @@ class NotifyChannel
     /**
      * Send the given notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     * @param Notification $notification
+     * @return array|null
      */
-    public function send($notifiable, Notification $notification): ?array
+    public function send(mixed $notifiable, Notification $notification): ?array
     {
         $message = $notification->toNotify($notifiable);
 

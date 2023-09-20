@@ -2,15 +2,20 @@
 
 namespace Modules\Common\Enums;
 
-use Modules\Core\Enums\BaseEnum;
+use Modules\Common\Support\Traits\EnumConcern;
 
-/**
- * @method static static TRUE()
- * @method static static FALSE()
- */
-final class BooleanEnum extends BaseEnum
+enum BooleanEnum: int
 {
-    public const TRUE = 1;
+    use EnumConcern;
 
-    public const FALSE = 0;
+    case TRUE = 1;
+    case FALSE = 0;
+
+    public function map(): string
+    {
+        return match ($this) {
+            self::TRUE => '是',
+            self::FALSE => '否',
+        };
+    }
 }

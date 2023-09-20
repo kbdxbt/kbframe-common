@@ -7,5 +7,7 @@
     "providers": [
         "Modules\\Common\\Providers\\CommonServiceProvider"
     ],
-    "files": []
+    "files": [
+        "helpers.php"
+    ]
 }

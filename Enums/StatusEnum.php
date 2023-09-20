@@ -2,18 +2,22 @@
 
 namespace Modules\Common\Enums;
 
-use Modules\Core\Enums\BaseEnum;
+use Modules\Common\Support\Traits\EnumConcern;
 
-/**
- * @method static static ENABLED()
- * @method static static DISABLED()
- * @method static static DELETE()
- */
-final class StatusEnum extends BaseEnum
+enum StatusEnum: int
 {
-    public const ENABLED = 1;
+    use EnumConcern;
 
-    public const DISABLED = 0;
+    case ENABLED = 1;
+    case DISABLED = 0;
+    case DELETE = -1;
 
-    public const DELETE = -1;
+    public function map(): string
+    {
+        return match ($this) {
+            self::ENABLED => '启用',
+            self::DISABLED => '禁用',
+            self::DELETE => '删除',
+        };
+    }
 }

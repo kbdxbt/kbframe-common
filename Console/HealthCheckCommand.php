@@ -10,11 +10,14 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Str;
-use Modules\Common\Enums\HealthCheckStateEnum;
 
 class HealthCheckCommand extends Command
 {
-    /**
+    const STATE_OK = 'ok';
+    const STATE_WARNING = 'warning';
+    const STATE_FAILING = 'failing';
+
+        /**
      * The console command name.
      */
     protected $name = 'health:check';
@@ -49,14 +52,13 @@ class HealthCheckCommand extends Command
             ->sortBy(fn (\ReflectionMethod $method) => $method->name)
             ->pipe(function (Collection $methods) {
                 $this->withProgressBar($methods, function ($method) use (&$checks): void {
-                    /** @var HealthCheckStateEnum $state */
-                    $state = \call_user_func([$this, $method->name]);
+                    $result = \call_user_func([$this, $method->name]);
 
                     $checks[] = [
                         'index' => \count((array) $checks) + 1,
                         'resource' => Str::of($method->name)->replaceFirst('check', ''),
-                        'state' => $state,
-                        'message' => $state->description,
+                        'state' => $result['state'],
+                        'message' => $result['description'],
                     ];
                 });
 
@@ -65,7 +67,7 @@ class HealthCheckCommand extends Command
 
                 return collect($checks);
             })
-            ->filter(fn ($check) => $check['state']->isNot(HealthCheckStateEnum::OK))
+            ->filter(fn ($check) => $check['state'] !== self::STATE_OK)
             ->whenNotEmpty(function (Collection $notOkChecks) {
                 $this->error('Health check failed.');
 
@@ -80,7 +82,7 @@ class HealthCheckCommand extends Command
         return self::SUCCESS;
     }
 
-    protected function checkDatabase($connection = null): HealthCheckStateEnum
+    protected function checkDatabase($connection = null): array
     {
         try {
             DB::connection($connection ?: config('database.default'))->getPdo();
@@ -91,7 +93,7 @@ class HealthCheckCommand extends Command
         return $this->ok('The database check passed');
     }
 
-    protected function checkDatabaseVersion($connection = null): HealthCheckStateEnum
+    protected function checkDatabaseVersion($connection = null): array
     {
         if ('mysql' !== config('database.default')) {
             return $this->warning('This check is only available for MySQL.');
@@ -105,7 +107,7 @@ class HealthCheckCommand extends Command
         return $this->ok('Mysql version check passed');
     }
 
-    protected function checkSqlSafeUpdates(): HealthCheckStateEnum
+    protected function checkSqlSafeUpdates(): array
     {
         if ('mysql' !== config('database.default')) {
             return $this->warning('This check is only available for MySQL.');
@@ -119,7 +121,7 @@ class HealthCheckCommand extends Command
         return $this->ok('The database sql_safe_updates config check passed');
     }
 
-    protected function checkSqlMode($checkedSqlModes = 'strict_all_tables'): HealthCheckStateEnum
+    protected function checkSqlMode($checkedSqlModes = 'strict_all_tables'): array
     {
         if ('mysql' !== config('database.default')) {
             return $this->warning('This check is only available for MySQL.');
@@ -146,7 +148,7 @@ class HealthCheckCommand extends Command
     /**
      * @throws \Exception
      */
-    protected function checkTimeZone(): HealthCheckStateEnum
+    protected function checkTimeZone(): array
     {
         if ('mysql' !== config('database.default')) {
             return $this->warning('This check is only available for MySQL.');
@@ -166,7 +168,7 @@ class HealthCheckCommand extends Command
         return $this->ok('The database timezone config check passed');
     }
 
-    protected function checkPing(?string $url = null): HealthCheckStateEnum
+    protected function checkPing(?string $url = null): array
     {
         $url = $url ?: config('app.url');
 
@@ -175,10 +177,10 @@ class HealthCheckCommand extends Command
             return $this->failing("Could not connect to the application: `{$response->body()}`");
         }
 
-        return HealthCheckStateEnum::OK();
+        return $this->ok();
     }
 
-    protected function checkPhpVersion(): HealthCheckStateEnum
+    protected function checkPhpVersion(): array
     {
         if (version_compare(PHP_VERSION, '7.3.0', '<')) {
             return $this->failing('PHP version is less than 7.3.0.');
@@ -187,7 +189,7 @@ class HealthCheckCommand extends Command
         return $this->ok('PHP version check passed');
     }
 
-    protected function checkPhpExtensions(): HealthCheckStateEnum
+    protected function checkPhpExtensions(): array
     {
         $extensions = [
             'curl',
@@ -212,7 +214,7 @@ class HealthCheckCommand extends Command
         return $this->ok('The following PHP extensions check passed');
     }
 
-    protected function checkDiskSpace(): HealthCheckStateEnum
+    protected function checkDiskSpace(): array
     {
         $freeSpace = disk_free_space(base_path());
         $diskSpace = sprintf('%.1f', $freeSpace / (1024 * 1024));
@@ -228,12 +230,12 @@ class HealthCheckCommand extends Command
         return $this->ok('The disk space check passed');
     }
 
-    protected function checkMemoryLimit(int $limit = 128): HealthCheckStateEnum
+    protected function checkMemoryLimit(int $limit = 128): array
     {
         $inis = collect(ini_get_all())->filter(fn ($value, $key) => str_contains($key, 'memory_limit'));
 
         if ($inis->isEmpty()) {
-            return tap(HealthCheckStateEnum::FAILING(), fn (HealthCheckStateEnum $state) => $this->failing('The memory limit is not set.'));
+            return $this->failing('The memory limit is not set.');
         }
 
         $localValue = $inis->first()['local_value'];
@@ -244,7 +246,7 @@ class HealthCheckCommand extends Command
         return $this->ok('The memory limit check passed');
     }
 
-    protected function checkQueue(): HealthCheckStateEnum
+    protected function checkQueue(): array
     {
         if (! Queue::connected()) {
             return $this->failing('The queue is not connected.');
@@ -253,25 +255,23 @@ class HealthCheckCommand extends Command
         return $this->ok('The queue limit check passed');
     }
 
-    protected function failing($description)
+    protected function failing($description = ''): array
     {
-        return $this->wrapState(__FUNCTION__, $description);
+        return $this->wrapState(self::STATE_FAILING, $description);
     }
 
-    protected function warning($description)
+    protected function warning($description = ''): array
     {
-        return $this->wrapState(__FUNCTION__, $description);
+        return $this->wrapState(self::STATE_WARNING, $description);
     }
 
-    protected function ok($description)
+    protected function ok($description = ''): array
     {
-        return $this->wrapState(__FUNCTION__, $description);
+        return $this->wrapState(self::STATE_OK, $description);
     }
 
-    private function wrapState($state, $description)
+    private function wrapState($state, $description): array
     {
-        return tap(HealthCheckStateEnum::{strtoupper($state)}(), function (HealthCheckStateEnum $state) use ($description): void {
-            $state->description = $description;
-        });
+        return ['state' => $state, 'description' => $description];
     }
 }

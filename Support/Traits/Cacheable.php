@@ -13,7 +13,7 @@ trait Cacheable
 
     protected string $cachePrefix;
 
-    public function getCache($driver = 'redis')
+    public function getCache($driver = 'redis'): \Illuminate\Contracts\Cache\Repository
     {
         if ($this->cache instanceof \Illuminate\Contracts\Cache\Repository) {
             return $this->cache;
@@ -22,7 +22,7 @@ trait Cacheable
         return $this->cache = Cache::driver($driver);
     }
 
-    protected function getCacheKey()
+    protected function getCacheKey(): string
     {
         return $this->cachePrefix.$this->key;
     }

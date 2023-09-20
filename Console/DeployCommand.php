@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Common\Console;
 
+use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Process\Process;
 
-class DeployCommand extends OptimizeAllCommand
+class DeployCommand extends Command
 {
     /**
      * The console command name.
@@ -35,10 +36,6 @@ class DeployCommand extends OptimizeAllCommand
 
         if ($this->option('migrate')) {
             $this->call('migrate');
-        }
-
-        if (E_ERROR === parent::handle()) {
-            return E_ERROR;
         }
 
         return self::SUCCESS;

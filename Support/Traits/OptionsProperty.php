@@ -42,7 +42,7 @@ trait OptionsProperty
 
     public function get($key = null, $default = null)
     {
-        if (null === $key) {
+        if ($key === null) {
             return $this->options;
         }
 

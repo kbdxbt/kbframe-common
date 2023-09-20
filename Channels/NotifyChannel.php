@@ -11,10 +11,6 @@ class NotifyChannel
 {
     /**
      * Send the given notification.
-     *
-     * @param mixed $notifiable
-     * @param Notification $notification
-     * @return array|null
      */
     public function send(mixed $notifiable, Notification $notification): ?array
     {

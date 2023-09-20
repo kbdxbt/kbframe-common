@@ -10,7 +10,7 @@ trait HasOptions
     protected array $options = [];
 
     /**
-     * @param mixed $option
+     * @param  mixed  $option
      * @return array|mixed
      */
     public function __get($option)
@@ -24,7 +24,7 @@ trait HasOptions
     }
 
     /**
-     * @param mixed $option
+     * @param  mixed  $option
      */
     public function __isset($option): bool
     {
@@ -47,7 +47,7 @@ trait HasOptions
     }
 
     /**
-     * @param mixed $value
+     * @param  mixed  $value
      * @return $this
      */
     public function addOption(string $option, $value)
@@ -74,7 +74,7 @@ trait HasOptions
     }
 
     /**
-     * @param mixed $value
+     * @param  mixed  $value
      * @return $this
      */
     public function setOption(string $option, $value)
@@ -102,9 +102,9 @@ trait HasOptions
      * @param  null|mixed  $default
      * @return array|mixed
      */
-    public function getOption(?string $option = null, $default = null)
+    public function getOption(string $option = null, $default = null)
     {
-        if (null === $option) {
+        if ($option === null) {
             return $this->options;
         }
 
@@ -117,7 +117,7 @@ trait HasOptions
     }
 
     /**
-     * @param mixed $value
+     * @param  mixed  $value
      * @return $this
      */
     public function set(string $option, $value)
@@ -130,7 +130,7 @@ trait HasOptions
     /**
      * @return array|mixed
      */
-    public function get(?string $option = null)
+    public function get(string $option = null)
     {
         return $this->getOption($option);
     }

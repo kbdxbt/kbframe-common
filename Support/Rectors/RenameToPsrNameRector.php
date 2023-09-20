@@ -208,7 +208,7 @@ class RenameToPsrNameRector extends AbstractRector implements ConfigurableRector
 
             $pattern = preg_quote($pattern, '#');
             $pattern = str_replace('\*', '.*', $pattern);
-            if (1 === preg_match('#^'.$pattern.'\z#u', $value)) {
+            if (preg_match('#^'.$pattern.'\z#u', $value) === 1) {
                 return true;
             }
         }
@@ -551,7 +551,7 @@ class RenameToPsrNameRector extends AbstractRector implements ConfigurableRector
     protected function hasFuncCallIndexStringArg(Node\Expr\FuncCall $funcCall, int $index): bool
     {
         return isset($funcCall->args[$index])
-            && null === $funcCall->args[$index]->name
+            && $funcCall->args[$index]->name === null
             && $funcCall->args[$index]->value instanceof Node\Scalar\String_;
     }
 

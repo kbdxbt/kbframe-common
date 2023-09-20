@@ -4,9 +4,7 @@ namespace Modules\Common\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Common\Providers\CommonServiceProvider;
-use Modules\Common\Providers\RouteServiceProvider;
 use Nwidart\Modules\LaravelModulesServiceProvider;
-use Nwidart\Modules\Providers\BootstrapServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -36,7 +34,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         return [
             LaravelModulesServiceProvider::class,
-            CommonServiceProvider::class
+            CommonServiceProvider::class,
         ];
     }
 
@@ -51,7 +49,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         config()->set('app.debug', true);
 
-        $app['config']->set('modules.paths.modules', __DIR__ . '/../../');
+        $app['config']->set('modules.paths.modules', __DIR__.'/../../');
     }
 
     protected function defineRoutes($router): void

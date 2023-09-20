@@ -14,10 +14,12 @@ use Illuminate\Support\Str;
 class HealthCheckCommand extends Command
 {
     const STATE_OK = 'ok';
+
     const STATE_WARNING = 'warning';
+
     const STATE_FAILING = 'failing';
 
-        /**
+    /**
      * The console command name.
      */
     protected $name = 'health:check';
@@ -95,7 +97,7 @@ class HealthCheckCommand extends Command
 
     protected function checkDatabaseVersion($connection = null): array
     {
-        if ('mysql' !== config('database.default')) {
+        if (config('database.default') !== 'mysql') {
             return $this->warning('This check is only available for MySQL.');
         }
 
@@ -109,7 +111,7 @@ class HealthCheckCommand extends Command
 
     protected function checkSqlSafeUpdates(): array
     {
-        if ('mysql' !== config('database.default')) {
+        if (config('database.default') !== 'mysql') {
             return $this->warning('This check is only available for MySQL.');
         }
 
@@ -123,7 +125,7 @@ class HealthCheckCommand extends Command
 
     protected function checkSqlMode($checkedSqlModes = 'strict_all_tables'): array
     {
-        if ('mysql' !== config('database.default')) {
+        if (config('database.default') !== 'mysql') {
             return $this->warning('This check is only available for MySQL.');
         }
 
@@ -150,7 +152,7 @@ class HealthCheckCommand extends Command
      */
     protected function checkTimeZone(): array
     {
-        if ('mysql' !== config('database.default')) {
+        if (config('database.default') !== 'mysql') {
             return $this->warning('This check is only available for MySQL.');
         }
 
@@ -168,7 +170,7 @@ class HealthCheckCommand extends Command
         return $this->ok('The database timezone config check passed');
     }
 
-    protected function checkPing(?string $url = null): array
+    protected function checkPing(string $url = null): array
     {
         $url = $url ?: config('app.url');
 

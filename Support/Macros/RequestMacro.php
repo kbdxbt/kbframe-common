@@ -15,7 +15,7 @@ class RequestMacro
     public function headers(): callable
     {
         return function ($key = null, $default = null) {
-            return null === $key
+            return $key === null
                 ? collect($this->header())
                     ->map(fn ($header) => $header[0])
                     ->toArray()

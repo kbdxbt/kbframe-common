@@ -29,11 +29,11 @@ class ResponseFactoryMacro
     {
         return function (
             string $url,
-            ?string $name = null,
+            string $name = null,
             array $headers = [],
             ?string $disposition = 'attachment',
             int $chunk = 2048,
-            ?Client $client = null
+            Client $client = null
         ): StreamedResponse {
             $client ??= new Client();
 

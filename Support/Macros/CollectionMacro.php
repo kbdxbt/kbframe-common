@@ -33,7 +33,7 @@ class CollectionMacro
         return function ($currentItem, $fallback = null) {
             $currentKey = $this->search($currentItem, true);
 
-            if (false === $currentKey) {
+            if ($currentKey === false) {
                 return $fallback;
             }
 

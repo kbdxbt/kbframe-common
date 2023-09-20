@@ -62,8 +62,8 @@ class QueryBuilderMacro
      */
     public function top(): callable
     {
-        return function ($column, ?int $limit = null, ?bool $null = false, ?int $min = null, ?string $distinct = null) {
-            if (null === $distinct) {
+        return function ($column, int $limit = null, ?bool $null = false, int $min = null, string $distinct = null) {
+            if ($distinct === null) {
                 $op = 'count(*)';
             } else {
                 $quotedDistinct = $this->getGrammar()->wrap($distinct);
@@ -72,7 +72,7 @@ class QueryBuilderMacro
 
             $relation = $this->select($column)->selectRaw($op)->groupBy($column)->orderByRaw('1 desc')->orderBy($column);
 
-            if (null !== $limit) {
+            if ($limit !== null) {
                 $relation = $relation->limit($limit);
             }
 
@@ -80,7 +80,7 @@ class QueryBuilderMacro
                 $relation = $relation->whereNotNull($column);
             }
 
-            if (null !== $min) {
+            if ($min !== null) {
                 $relation = $relation->havingRaw("$op >= ?", [$min]);
             }
 

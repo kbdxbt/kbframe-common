@@ -51,7 +51,7 @@ class AppInitCommand extends HealthCheckCommand implements Isolatable
             ->sortBy(function ($method) {
                 $index = array_search($method->name, $this->onlyCheck, true);
 
-                return false !== $index ? $index : \count($this->onlyCheck);
+                return $index !== false ? $index : \count($this->onlyCheck);
             })->pipe(function (Collection $methods) {
                 $methods->map(function ($method) use (&$checks): void {
                     $result = \call_user_func([$this, $method->name]);

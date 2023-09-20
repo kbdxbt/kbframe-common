@@ -20,7 +20,7 @@ if (! function_exists('environment')) {
             return 'cli';
         }
 
-        if (false !== stripos(PHP_SAPI, 'cgi') && getenv('TERM')) {
+        if (stripos(PHP_SAPI, 'cgi') !== false && getenv('TERM')) {
             return 'cli';
         }
 
@@ -123,7 +123,7 @@ if (! function_exists('is_json')) {
     {
         json_decode($str);
 
-        return JSON_ERROR_NONE === json_last_error();
+        return json_last_error() === JSON_ERROR_NONE;
     }
 }
 
@@ -142,7 +142,7 @@ if (! function_exists('array_filter_filled')) {
 }
 
 if (! function_exists('call')) {
-    function call($callback, array $parameters = [], ?string $defaultMethod = null): void
+    function call($callback, array $parameters = [], string $defaultMethod = null): void
     {
         app()->call($callback, $parameters, $defaultMethod);
     }
@@ -161,7 +161,7 @@ if (! function_exists('catch_resource_usage')) {
 }
 
 if (! function_exists('resolve_class_from')) {
-    function resolve_class_from(string $path, ?string $vendorPath = null, ?string $vendorNamespace = null): string
+    function resolve_class_from(string $path, string $vendorPath = null, string $vendorNamespace = null): string
     {
         /** @noinspection CallableParameterUseCaseInTypeContextInspection */
         $vendorPath = $vendorPath ? realpath($vendorPath) : app_path();
@@ -203,7 +203,7 @@ if (! function_exists('write_log')) {
 if (! function_exists('to_transform_array')) {
     function to_transform_array($value, bool $filter = true): array
     {
-        if (null === $value || '' === $value || [] === $value) {
+        if ($value === null || $value === '' || $value === []) {
             return [];
         }
 
@@ -229,7 +229,7 @@ if (! function_exists('to_transform_array')) {
             $value = (array) $value;
         }
 
-        return $filter ? array_filter($value, fn ($v) => '' !== $v && null !== $v) : $value;
+        return $filter ? array_filter($value, fn ($v) => $v !== '' && $v !== null) : $value;
     }
 }
 

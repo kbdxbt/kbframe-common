@@ -16,7 +16,7 @@ trait ValidateStrictAll
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function validateStrictAllWith($validator, ?Request $request = null): array
+    public function validateStrictAllWith($validator, Request $request = null): array
     {
         /** @noinspection CallableParameterUseCaseInTypeContextInspection */
         $request = $request ?: request();

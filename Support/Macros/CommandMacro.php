@@ -44,11 +44,11 @@ class CommandMacro
         return function (string $title, $task = '', $loadingText = 'loading...') {
             $this->output->write("$title: <comment>{$loadingText}</comment>");
 
-            if (null === $task) {
+            if ($task === null) {
                 $result = true;
             } else {
                 try {
-                    $result = false === $task() ? false : true;
+                    $result = $task() === false ? false : true;
                 } catch (\Throwable $taskException) {
                     $result = false;
                 }

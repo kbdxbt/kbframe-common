@@ -73,7 +73,7 @@ class LogHttp
         }
 
         foreach ($this->exceptPaths as $exceptPath) {
-            '/' === $exceptPath or $exceptPath = trim($exceptPath, '/');
+            $exceptPath === '/' or $exceptPath = trim($exceptPath, '/');
             if ($request->fullUrlIs($exceptPath) || $request->is($exceptPath)) {
                 return true;
             }
@@ -124,7 +124,7 @@ class LogHttp
     }
 
     /**
-     * @param \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Request|Response $requestOrResponse
+     * @param  \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Request|Response  $requestOrResponse
      */
     protected function extractHeader($requestOrResponse): string
     {

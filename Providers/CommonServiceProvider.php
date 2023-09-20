@@ -54,7 +54,7 @@ class CommonServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
         $this->registerGlobalFunctionsFrom();
-        $this->registerMacros();
+        //$this->registerMacros();
         $this->registerCommands();
         $this->extendValidator();
         $this->registerNotificationChannel();

@@ -193,11 +193,7 @@ class CommonServiceProvider extends ServiceProvider
             }
 
             foreach ((new Finder())->in($rulePath)->files() as $ruleFile) {
-                $ruleClass = Str::ucfirst(str_replace(
-                    ['/', '.php'],
-                    ['\\', ''],
-                    Str::after($ruleFile->getRealPath(), realpath(base_path()).\DIRECTORY_SEPARATOR)
-                ));
+                $ruleClass = "\\Modules\\" . $module->getName() . "\\Rules\\".pathinfo($ruleFile->getFilename(), PATHINFO_FILENAME);
 
                 if (is_subclass_of($ruleClass, Rule::class)
                     && ! (new \ReflectionClass($ruleClass))->isAbstract()) {

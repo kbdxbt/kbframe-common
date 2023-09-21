@@ -7,6 +7,6 @@ final class ChineseWordRule extends RegexRule
     protected function pattern(): string
     {
         /** @lang PhpRegExp */
-        return '/^(?:[\u4e00-\u9fa5·]{2,16})$/';
+        return '/[\x{4e00}-\x{9fa5}]+/u';
     }
 }

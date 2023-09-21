@@ -17,6 +17,7 @@ use Illuminate\Database\Schema\Grammars\Grammar;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\ChannelManager;
 use Illuminate\Routing\ResponseFactory;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
@@ -43,6 +44,18 @@ class CommonServiceProvider extends ServiceProvider
     protected string $moduleNameLower = 'common';
 
     /**
+     * The filters base class name.
+     *
+     * @var array
+     */
+    protected $middleware = [
+        'Common' => [
+            'log.http' => 'LogHttp',
+            'verify.signature' => 'VerifySignature',
+        ],
+    ];
+
+    /**
      * Boot the application events.
      *
      * @throws \ReflectionException
@@ -54,7 +67,8 @@ class CommonServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
         $this->registerGlobalFunctionsFrom();
-        //$this->registerMacros();
+        $this->registerMacros();
+        $this->registerMiddleware($this->app['router']);
         $this->registerCommands();
         $this->extendValidator();
         $this->registerNotificationChannel();
@@ -122,7 +136,7 @@ class CommonServiceProvider extends ServiceProvider
         collect(glob(__DIR__.'/../Support/Macros/QueryBuilder/*QueryBuilderMacro.php'))
             ->each(function ($file): void {
                 $queryBuilderMacro = $this->app->make(
-                    resolve_class_from($file, base_path('Modules'), config('modules.namespace'))
+                    "\\Modules\\{$this->moduleName}\\Support\\Macros\\QueryBuilder\\".pathinfo($file, PATHINFO_FILENAME)
                 );
                 QueryBuilder::mixin($queryBuilderMacro);
                 EloquentBuilder::mixin($queryBuilderMacro);
@@ -138,6 +152,20 @@ class CommonServiceProvider extends ServiceProvider
         ResponseFactory::mixin($this->app->make(ResponseFactoryMacro::class));
         Stringable::mixin($this->app->make(StringableMacro::class));
         Str::mixin($this->app->make(StrMacro::class));
+    }
+
+    /**
+     * Register the filters.
+     */
+    public function registerMiddleware(Router $router): void
+    {
+        foreach ($this->middleware as $module => $middlewares) {
+            foreach ($middlewares as $name => $middleware) {
+                $class = "Modules\\{$module}\\Http\\Middleware\\{$middleware}";
+
+                $router->aliasMiddleware($name, $class);
+            }
+        }
     }
 
     protected function registerCommands(): void

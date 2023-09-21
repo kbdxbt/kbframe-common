@@ -22,7 +22,7 @@ trait EnumConcern
         }
 
         return collect(self::cases())->mapWithKeys(function ($item) use ($method) {
-            return [$item->name => self::from($item->value)->$method()];
+            return [$item->value => self::from($item->value)->$method()];
         });
     }
 
@@ -42,12 +42,9 @@ trait EnumConcern
         return self::all($method)->keys()->toArray();
     }
 
-    /**
-     * Get all the value as a Array.
-     */
-    public static function maps(): mixed
+    public static function fromValue($case, string $method = 'map'): mixed
     {
-        return self::all('map')->values()->toArray();
+        return self::from($case)?->$method();
     }
 
     /**

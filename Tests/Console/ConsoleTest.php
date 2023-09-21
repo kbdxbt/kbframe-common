@@ -1,6 +1,8 @@
 <?php
 
-namespace Modules\Common\Tests;
+namespace Modules\Common\Tests\Console;
+
+use Modules\Common\Tests\TestCase;
 
 class ConsoleTest extends TestCase
 {

@@ -21,15 +21,15 @@ use Illuminate\Support\Str;
  */
 trait AllowedFilterable
 {
-    public function scopeAllowedFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
     {
         return $this->scopeExactFilter($query, $name, $default, $internalName, $ignore);
     }
 
-    public function scopeAllowedExactFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedExactFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
     {
         if (
-            (request()->has($name) || null !== $default)
+            (request()->has($name) || $default !== null)
             && ! \in_array($value = request()->input($name, $default), Arr::wrap($ignore), true)
         ) {
             if (\is_array($value)) {
@@ -42,10 +42,10 @@ trait AllowedFilterable
         return $query;
     }
 
-    public function scopeAllowedPartialFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedPartialFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
     {
         if (
-            (request()->has($name) || null !== $default)
+            (request()->has($name) || $default !== null)
             && ! \in_array($value = request()->input($name, $default), Arr::wrap($ignore), true)
         ) {
             $wrappedProperty = $query->getQuery()->getGrammar()->wrap($query->qualifyColumn($internalName ?: $name));
@@ -53,7 +53,7 @@ trait AllowedFilterable
             $sql = "LOWER({$wrappedProperty}) LIKE ?";
 
             if (\is_array($value)) {
-                if (0 === \count(array_filter($value, 'strlen'))) {
+                if (\count(array_filter($value, 'strlen')) === 0) {
                     return $query;
                 }
 
@@ -76,10 +76,10 @@ trait AllowedFilterable
         return $query;
     }
 
-    public function scopeAllowedScopeFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedScopeFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
     {
         if (
-            (request()->has($name) || null !== $default)
+            (request()->has($name) || $default !== null)
             && ! \in_array($value = request()->input($name, $default), Arr::wrap($ignore), true)
         ) {
             $nameParts = collect(explode('.', $internalName ?: $name));
@@ -114,7 +114,7 @@ trait AllowedFilterable
                 return $query->withTrashed();
             }
 
-            if ('only' === $value) {
+            if ($value === 'only') {
                 return $query->onlyTrashed();
             }
 
@@ -139,7 +139,7 @@ trait AllowedFilterable
 
         foreach ($sorts as $direction => $column) {
             if (\is_int($column)) {
-                '-' === $direction[0]
+                $direction[0] === '-'
                 ? ($column = ltrim($direction, '-') and $direction = 'desc')
                 : ($column = $direction and $direction = 'asc');
             }
@@ -154,9 +154,9 @@ trait AllowedFilterable
         return $query;
     }
 
-    public function scopeAllowedSort(Builder $query, string $name, $default = null, ?string $internalName = null): Builder
+    public function scopeAllowedSort(Builder $query, string $name, $default = null, string $internalName = null): Builder
     {
-        if (request()->hasAny([$name, '-'.$name]) || null !== $default) {
+        if (request()->hasAny([$name, '-'.$name]) || $default !== null) {
             $column = $internalName ?: $name;
             if (request()->has('-'.$name)) {
                 $direction = 'desc';

@@ -6,7 +6,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 use Modules\Common\Support\HmacSigner;
 
-class UploadControllerTest extends TestCase
+class ControllerTest extends TestCase
 {
     public function testUpload(): void
     {
@@ -25,5 +25,19 @@ class UploadControllerTest extends TestCase
 
         $response = $this->postJson('upload_image', ['file' => $file], $header);
         $response->assertStatus(200);
+    }
+
+    public function testDebugbar()
+    {
+        $this->app['env'] = 'testing';
+
+        $response = $this->postJson('ping');
+        $this->assertArrayHasKey('debugbar', $response);
+    }
+
+    public function testSoar()
+    {
+        $response = $this->postJson('ping');
+        $this->assertArrayHasKey('soar_scores', $response);
     }
 }

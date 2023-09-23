@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
  */
 trait Filterable
 {
-    public function scopeFilter(Builder $query, ?array $input = null): void
+    public function scopeFilter(Builder $query, array $input = null): void
     {
         /** @noinspection CallableParameterUseCaseInTypeContextInspection */
         $input = $input ?: request()->query();

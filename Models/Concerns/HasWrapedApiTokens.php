@@ -21,7 +21,7 @@ trait HasWrapedApiTokens
         ];
     }
 
-    public static function getDevice(?string $userAgent = null): string
+    public static function getDevice(string $userAgent = null): string
     {
         return Agent::device($userAgent) ?: 'unknown';
     }

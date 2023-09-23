@@ -15,7 +15,6 @@ use Illuminate\Database\Query\Grammars\MySqlGrammar;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Grammars\Grammar;
 use Illuminate\Http\Request;
-use Illuminate\Notifications\ChannelManager;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Collection;
@@ -23,7 +22,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
-use Modules\Common\Channels\NotifyChannel;
+use Modules\Common\Http\Middleware\DebugBar;
 use Modules\Common\Rules\Rule;
 use Modules\Common\Support\Macros\BlueprintMacro;
 use Modules\Common\Support\Macros\CollectionMacro;
@@ -71,7 +70,6 @@ class CommonServiceProvider extends ServiceProvider
         $this->registerMiddleware($this->app['router']);
         $this->registerCommands();
         $this->extendValidator();
-        $this->registerNotificationChannel();
     }
 
     /**
@@ -159,6 +157,8 @@ class CommonServiceProvider extends ServiceProvider
      */
     public function registerMiddleware(Router $router): void
     {
+        $this->app->make('Illuminate\Contracts\Http\Kernel')->pushMiddleware(DebugBar::class);
+
         foreach ($this->middleware as $module => $middlewares) {
             foreach ($middlewares as $name => $middleware) {
                 $class = "Modules\\{$module}\\Http\\Middleware\\{$middleware}";
@@ -193,7 +193,7 @@ class CommonServiceProvider extends ServiceProvider
             }
 
             foreach ((new Finder())->in($rulePath)->files() as $ruleFile) {
-                $ruleClass = "\\Modules\\" . $module->getName() . "\\Rules\\".pathinfo($ruleFile->getFilename(), PATHINFO_FILENAME);
+                $ruleClass = '\\Modules\\'.$module->getName().'\\Rules\\'.pathinfo($ruleFile->getFilename(), PATHINFO_FILENAME);
 
                 if (is_subclass_of($ruleClass, Rule::class)
                     && ! (new \ReflectionClass($ruleClass))->isAbstract()) {
@@ -223,10 +223,5 @@ class CommonServiceProvider extends ServiceProvider
             ->each(function ($file): void {
                 require_once $file;
             });
-    }
-
-    protected function registerNotificationChannel(): void
-    {
-        $this->app->make(ChannelManager::class)->extend('notify', fn ($app) => $app->make(NotifyChannel::class));
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Modules\Common\Tests;
 
+use Barryvdh\Debugbar\ServiceProvider;
+use Guanguans\LaravelSoar\SoarServiceProvider;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Route;
 use Jiannei\Response\Laravel\Providers\LaravelServiceProvider;
@@ -50,6 +52,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             CommonServiceProvider::class,
             CoreServiceProvider::class,
             LaravelServiceProvider::class,
+            ServiceProvider::class,
+            SoarServiceProvider::class,
         ];
     }
 
@@ -64,14 +68,16 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             'prefix' => '',
         ]);
 
-        config()->set('app.debug', true);
-
         $app['config']->set('modules.paths.modules', __DIR__.'/../../');
     }
 
     protected function defineRoutes($router): void
     {
+        Route::post('ping', function () {
+            return response()->json(['ok']);
+        })->middleware(['log.http']);
+
         Route::post('upload_image', [UploadController::class, 'image'])
-            ->middleware(['log.http', sprintf('verify.signature:%s', config('services.signer.default.secret'))]);
+            ->middleware([sprintf('verify.signature:%s', config('services.signer.default.secret'))]);
     }
 }

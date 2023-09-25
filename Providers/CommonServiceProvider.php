@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
-use Modules\Common\Http\Middleware\DebugBar;
+use Modules\Common\Http\Middleware\ProfileJsonResponse;
 use Modules\Common\Rules\Rule;
 use Modules\Common\Support\Macros\BlueprintMacro;
 use Modules\Common\Support\Macros\CollectionMacro;

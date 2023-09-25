@@ -19,10 +19,8 @@
         "rakutentech/laravel-request-docs": "^2.23"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.9.2",
         "brainmaestro/composer-git-hooks": "v3.0.0-alpha.1",
         "friendsofphp/php-cs-fixer": "^3.22.0",
-        "guanguans/laravel-soar": "^3.8",
         "orchestra/testbench": "^5.0 || ^6.0 || ^7.0 || ^8.0",
         "phpunit/phpunit": "^9.5.21 || ^10",
         "pestphp/pest": "^1.23 || ^2.0",

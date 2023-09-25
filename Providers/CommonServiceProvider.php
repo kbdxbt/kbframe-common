@@ -157,7 +157,7 @@ class CommonServiceProvider extends ServiceProvider
      */
     public function registerMiddleware(Router $router): void
     {
-        $this->app->make('Illuminate\Contracts\Http\Kernel')->pushMiddleware(DebugBar::class);
+        $this->app->make('Illuminate\Contracts\Http\Kernel')->pushMiddleware(ProfileJsonResponse::class);
 
         foreach ($this->middleware as $module => $middlewares) {
             foreach ($middlewares as $name => $middleware) {

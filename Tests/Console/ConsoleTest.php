@@ -1,13 +1,5 @@
 <?php
 
-namespace Modules\Common\Tests\Console;
-
-use Modules\Common\Tests\TestCase;
-
-class ConsoleTest extends TestCase
-{
-    public function testHealthCheckCommand(): void
-    {
-        $this->artisan('health:check')->assertExitCode(0);
-    }
-}
+it('can exec health check command', function () {
+    $this->artisan('health:check')->assertExitCode(0);
+});

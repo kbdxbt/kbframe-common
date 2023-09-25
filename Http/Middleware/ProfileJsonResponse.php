@@ -30,7 +30,7 @@ class ProfileJsonResponse
             is_object($response->getData())
         ) {
             $response->setData($response->getData(true) + [
-                '_debugbar' => app('debugbar')->getData(),
+                'debugbar' => app('debugbar')->getData(),
             ]);
         }
 

@@ -62,11 +62,7 @@ class CommonServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->registerTranslations();
         $this->registerConfig();
-        $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
-
-        $this->registerGlobalFunctionsFrom();
         $this->registerMacros();
         $this->registerMiddleware($this->app['router']);
         $this->registerCommands();
@@ -79,22 +75,6 @@ class CommonServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->register(RouteServiceProvider::class);
-    }
-
-    /**
-     * Register translations.
-     */
-    public function registerTranslations(): void
-    {
-        $langPath = resource_path('lang/modules/'.$this->moduleNameLower);
-
-        if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, $this->moduleNameLower);
-            $this->loadJsonTranslationsFrom($langPath);
-        } else {
-            $this->loadTranslationsFrom(module_path($this->moduleName, 'Resources/lang'), $this->moduleNameLower);
-            $this->loadJsonTranslationsFrom(module_path($this->moduleName, 'Resources/lang'));
-        }
     }
 
     /**
@@ -216,13 +196,5 @@ class CommonServiceProvider extends ServiceProvider
                 }
             }
         }
-    }
-
-    protected function registerGlobalFunctionsFrom(): void
-    {
-        collect(glob(__DIR__.'/../Support/*helpers.php'))
-            ->each(function ($file): void {
-                require_once $file;
-            });
     }
 }

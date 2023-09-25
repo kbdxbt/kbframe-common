@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Common\Providers;
 
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Contracts\Validation\DataAwareRule;
 use Illuminate\Contracts\Validation\ImplicitRule;
 use Illuminate\Contracts\Validation\ValidatorAwareRule;
@@ -157,7 +158,7 @@ class CommonServiceProvider extends ServiceProvider
      */
     public function registerMiddleware(Router $router): void
     {
-        $this->app->make('Illuminate\Contracts\Http\Kernel')->pushMiddleware(ProfileJsonResponse::class);
+        $this->app->make(Kernel::class)->prependMiddleware(ProfileJsonResponse::class);
 
         foreach ($this->middleware as $module => $middlewares) {
             foreach ($middlewares as $name => $middleware) {

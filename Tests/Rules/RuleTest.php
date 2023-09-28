@@ -8,7 +8,7 @@ it('can validate chinese word rule', function () {
         'title' => 'chinese_word',
     ]);
 
-    $this->assertSame($validator->fails(), false);
+    expect($validator->fails())->toBeFalse();
 });
 
 it('can validate default rule', function () {
@@ -16,6 +16,6 @@ it('can validate default rule', function () {
         'title' => [new DefaultRule('test')],
     ]);
 
-    $this->assertSame($validator->fails(), false);
-    $this->assertSame($validator->getData(), ['title' => 'test']);
+    expect($validator->fails())->toBeFalse();
+    expect($validator->getData())->toBe(['title' => 'test']);
 });

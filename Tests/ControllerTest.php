@@ -18,6 +18,5 @@ it('can upload file', function () {
 
     $file = UploadedFile::fake()->create('test_file.jpg', 100);
 
-    $response = $this->postJson('upload_image', ['file' => $file], $header);
-    $response->assertStatus(200);
+    $this->postJson('upload_image', ['file' => $file], $header)->assertStatus(200);
 });

@@ -2,7 +2,6 @@
 
 namespace Modules\Common\Support;
 
-use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -11,7 +10,7 @@ class Upload
 {
     protected $driver;
 
-    protected Filesystem $filesystem;
+    protected $filesystem;
 
     public function __construct(
         protected UploadedFile $file,

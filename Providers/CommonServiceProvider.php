@@ -167,7 +167,7 @@ class CommonServiceProvider extends ServiceProvider
      */
     protected function extendValidator(): void
     {
-        foreach (Module::scan() as $module) {
+        foreach (Module::scan() as $module) { /** @phpstan-ignore-line */
             $rulePath = $module->getPath().'/Rules';
             if (! is_dir($rulePath)) {
                 continue;

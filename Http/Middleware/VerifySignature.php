@@ -30,6 +30,7 @@ class VerifySignature
 
     protected function validateParameters(Request $request, int $effectiveTime): void
     {
+        /** @phpstan-ignore-next-line */
         Validator::make($request->headers(), [
             'signature' => 'required|string',
             'nonce' => 'required|string|size:16',
@@ -39,6 +40,7 @@ class VerifySignature
 
     protected function validateSignature(Request $request, string $secret): void
     {
+        /** @phpstan-ignore-next-line */
         $parameters = array_merge($request->input(), [
             'timestamp' => $request->header('timestamp'),
             'nonce' => $request->header('nonce'),

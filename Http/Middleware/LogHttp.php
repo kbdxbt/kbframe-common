@@ -143,6 +143,6 @@ class LogHttp
 
     protected function calculateDuration(): string
     {
-        return number_format(microtime(true) - (constant('LARAVEL_START') ? : microtime(true)), 3);
+        return number_format(microtime(true) - (constant('LARAVEL_START') ?: microtime(true)), 3);
     }
 }

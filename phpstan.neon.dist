@@ -8,7 +8,6 @@ parameters:
         - Contracts
         - Http
         - Models
-        - Models
         - Providers
         - Routes
         - Rules

@@ -113,7 +113,7 @@ class LogHttp
             'request_id' => substr(app('request_id'), 0, 50),
             'request_param' => substr($this->extractInput($request), 0, $maxLengthOfMediumtext),
             'request_header' => substr($this->extractHeader($request), 0, $maxLengthOfMediumtext),
-            'request_time' => (string) LARAVEL_START, /** @phpstan-ignore-line */
+            'request_time' => (string) constant('LARAVEL_START'),
             'response_code' => (string) $response->status(),
             'response_header' => substr($this->extractHeader($response), 0, $maxLengthOfMediumtext),
             'response_body' => substr((string) $response->getContent(), 0, $maxLengthOfMediumtext),
@@ -143,8 +143,6 @@ class LogHttp
 
     protected function calculateDuration(): string
     {
-        return number_format(microtime(true) - LARAVEL_START, 3);
-
-/** @phpstan-ignore-line */
+        return number_format(microtime(true) - (constant('LARAVEL_START') ? : microtime(true)), 3);
     }
 }

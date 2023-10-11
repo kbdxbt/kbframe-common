@@ -3,6 +3,7 @@
 namespace Modules\Common\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Jiannei\Response\Laravel\Providers\LaravelServiceProvider;
 use Modules\Common\Http\Controllers\UploadController;
@@ -12,10 +13,22 @@ use Nwidart\Modules\LaravelModulesServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
+    protected $modulePath = __DIR__.'/Modules/';
+
     protected function setUp(): void
     {
         parent::setUp();
         $this->setUpDatabase();
+    }
+
+    protected function tearDown(): void
+    {
+        if (is_dir($this->modulePath.'kbframe-test')) {
+            @rmdir($this->modulePath.'kbframe-test');
+        }
+        if (is_dir($this->modulePath)) {
+            File::deleteDirectory($this->modulePath);
+        }
     }
 
     protected function setUpDatabase(): void
@@ -64,7 +77,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             'prefix' => '',
         ]);
 
-        $app['config']->set('modules.paths.modules', __DIR__.'/../../');
+        $this->registerTestModulePath($app);
     }
 
     protected function defineRoutes($router): void
@@ -75,5 +88,18 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         Route::post('upload_image', [UploadController::class, 'image'])
             ->middleware([sprintf('verify.signature:%s', config('services.signer.default.secret'))]);
+    }
+
+    protected function registerTestModulePath($app): void
+    {
+        if (! is_dir($this->modulePath)) {
+            File::makeDirectory(path: $this->modulePath);
+        }
+        if (! is_dir($this->modulePath.'kbframe-test')) {
+            File::link(__DIR__.'/../', $this->modulePath.'kbframe-test');
+        }
+
+        $app['config']->set('modules.scan.enabled', true);
+        $app['config']->set('modules.scan.paths', [__DIR__.'/../vendor/kbdxbt/*', __DIR__.'/../Tests/Modules/*']);
     }
 }

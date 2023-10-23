@@ -59,15 +59,13 @@ class CommonServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('Common')
+            ->name($this->moduleName)
             ->hasConfigFile(['config', 'notify'])
             ->hasCommands([
                 \Modules\Common\Console\AppInitCommand::class,
                 \Modules\Common\Console\DeployCommand::class,
                 \Modules\Common\Console\HealthCheckCommand::class,
             ]);
-
-        $this->registerMiddleware($this->app['router']);
     }
 
     /**
@@ -78,6 +76,8 @@ class CommonServiceProvider extends PackageServiceProvider
     public function boot()
     {
         $this->extendValidator();
+        $this->registerMiddleware($this->app['router']);
+        $this->registerMacros();
 
         return parent::boot();
     }

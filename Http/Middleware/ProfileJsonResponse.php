@@ -34,7 +34,7 @@ class ProfileJsonResponse
             ]);
         }
 
-        if ($request->fullUrlIs($this->getExpectFullUrl())) {
+        if ($response instanceof JsonResponse && $request->fullUrlIs($this->getExpectFullUrl())) {
             $response->setData(Arr::except(Arr::wrap($response->getData(true)), $this->getExprectField()));
         }
 

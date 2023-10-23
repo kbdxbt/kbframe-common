@@ -30,8 +30,9 @@ class VerifySignature
 
     protected function validateParameters(Request $request, int $effectiveTime): void
     {
-        /** @phpstan-ignore-next-line */
-        Validator::make($request->headers(), [
+        Validator::make(collect($request->headers->all())->map(function ($value) {
+            return current($value);
+        })->toArray(), [
             'signature' => 'required|string',
             'nonce' => 'required|string|size:16',
             'timestamp' => sprintf('required|int|max:%s|min:%s', $time = time(), $time - $effectiveTime),

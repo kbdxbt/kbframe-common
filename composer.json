@@ -16,7 +16,8 @@
         "nwidart/laravel-modules": "^10.0",
         "kbdxbt/kbframe-core": "^1.0.2",
         "milwad/laravel-validate": "^1.7",
-        "rakutentech/laravel-request-docs": "^2.23"
+        "rakutentech/laravel-request-docs": "^2.23",
+        "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": "v3.0.0-alpha.1",

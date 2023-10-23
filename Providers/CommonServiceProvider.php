@@ -20,7 +20,6 @@ use Illuminate\Routing\ResponseFactory;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
 use Modules\Common\Http\Middleware\ProfileJsonResponse;
@@ -35,9 +34,11 @@ use Modules\Common\Support\Macros\ResponseFactoryMacro;
 use Modules\Common\Support\Macros\StringableMacro;
 use Modules\Common\Support\Macros\StrMacro;
 use Nwidart\Modules\Facades\Module;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Symfony\Component\Finder\Finder;
 
-class CommonServiceProvider extends ServiceProvider
+class CommonServiceProvider extends PackageServiceProvider
 {
     protected string $moduleName = 'Common';
 
@@ -55,26 +56,40 @@ class CommonServiceProvider extends ServiceProvider
         ],
     ];
 
+    public function configurePackage(Package $package): void
+    {
+        $package
+            ->name('Common')
+            ->hasConfigFile(['config', 'notify'])
+            ->hasCommands([
+                \Modules\Common\Console\AppInitCommand::class,
+                \Modules\Common\Console\DeployCommand::class,
+                \Modules\Common\Console\HealthCheckCommand::class,
+            ]);
+
+        $this->registerMiddleware($this->app['router']);
+    }
+
     /**
      * Boot the application events.
      *
      * @throws \ReflectionException
      */
-    public function boot(): void
+    public function boot()
     {
-        $this->registerConfig();
-        $this->registerMacros();
-        $this->registerMiddleware($this->app['router']);
-        $this->registerCommands();
         $this->extendValidator();
+
+        return parent::boot();
     }
 
     /**
      * Register the service provider.
      */
-    public function register(): void
+    public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+
+        parent::register();
     }
 
     /**

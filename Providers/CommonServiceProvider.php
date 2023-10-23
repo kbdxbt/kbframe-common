@@ -101,28 +101,6 @@ class CommonServiceProvider extends PackageServiceProvider
     }
 
     /**
-     * Register config.
-     */
-    protected function registerConfig(): void
-    {
-        $this->publishes([
-            module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower.'.php'),
-        ], 'config');
-        $this->mergeConfigFrom(
-            module_path($this->moduleName, 'Config/config.php'),
-            $this->moduleNameLower
-        );
-
-        $this->publishes([
-            module_path($this->moduleName, 'Config/notify.php') => config_path('notify.php'),
-        ], 'config');
-        $this->mergeConfigFrom(
-            module_path($this->moduleName, 'Config/notify.php'),
-            'notify'
-        );
-    }
-
-    /**
      * Register macros.
      */
     protected function registerMacros(): void
@@ -161,17 +139,6 @@ class CommonServiceProvider extends PackageServiceProvider
 
                 $router->aliasMiddleware($name, $class);
             }
-        }
-    }
-
-    protected function registerCommands(): void
-    {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                \Modules\Common\Console\AppInitCommand::class,
-                \Modules\Common\Console\DeployCommand::class,
-                \Modules\Common\Console\HealthCheckCommand::class,
-            ]);
         }
     }
 

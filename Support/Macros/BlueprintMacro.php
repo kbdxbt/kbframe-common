@@ -12,24 +12,6 @@ use Illuminate\Support\Fluent;
  */
 class BlueprintMacro
 {
-    /**
-     * Add a comment to the table.
-     *
-     * ```php
-     * \Illuminate\Support\Facades\Schema::table('users', function (Blueprint $table) {
-     *    $table->comment('用户表');
-     * });
-     * ```
-     */
-    public function comment(): callable
-    {
-        /*
-         * @param  string  $comment
-         * @return \Illuminate\Support\Fluent
-         */
-        return fn ($comment) => $this->addCommand('tableComment', compact('comment'));
-    }
-
     public function hasIndex(): callable
     {
         return function (string $index): bool {
@@ -49,5 +31,10 @@ class BlueprintMacro
 
             return new Fluent();
         };
+    }
+
+    public function extJson($column = 'ext')
+    {
+        return $this->json($column)->nullable();
     }
 }

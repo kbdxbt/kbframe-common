@@ -33,8 +33,11 @@ class BlueprintMacro
         };
     }
 
-    public function extJson($column = 'ext')
+    public function extJson($column = 'ext'): callable
     {
-        return $this->json($column)->nullable();
+        return function (string $column): Fluent {
+            /** @var \Illuminate\Database\Schema\Blueprint $this */
+            return $this->json($column)->nullable();
+        };
     }
 }

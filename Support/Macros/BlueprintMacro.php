@@ -41,6 +41,15 @@ class BlueprintMacro
         };
     }
 
+    public function operators(): callable
+    {
+        return function () {
+            $this->string('created_by')->default('');
+
+            $this->string('updated_by')->default('');
+        };
+    }
+
     public function extJson(): callable
     {
         return function (string $column = 'ext'): Fluent {

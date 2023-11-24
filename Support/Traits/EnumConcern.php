@@ -207,9 +207,9 @@ trait EnumConcern
 
     public static function allToDatabaseNote(string $name, string $method = 'map')
     {
-        return $name . '[' . self::all($method)->implode(function ($value, $key) {
+        return $name.'['.self::all($method)->implode(function ($value, $key) {
             return $key.':'.$value;
-        }, ';') . ']';
+        }, ';').']';
     }
 
     /**

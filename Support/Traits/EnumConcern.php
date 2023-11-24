@@ -205,6 +205,13 @@ trait EnumConcern
         return self::toArray($method);
     }
 
+    public static function allToNote(string $method = 'map')
+    {
+        return self::all($method)->implode(function ($value, $key) {
+            return $key . ':' . $value;
+        }, ';');
+    }
+
     /**
      * Get a subset of the values as a Collection, only including the specified cases (keys).
      *

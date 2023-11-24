@@ -45,7 +45,7 @@ class BlueprintMacro
     {
         return function (string $column = 'ext'): Fluent {
             /** @var \Illuminate\Database\Schema\Blueprint $this */
-            return $this->json($column)->nullable();
+            return $this->json($column)->nullable()->comment('附加');
         };
     }
 }

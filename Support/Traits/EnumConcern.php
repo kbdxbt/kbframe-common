@@ -205,11 +205,11 @@ trait EnumConcern
         return self::toArray($method);
     }
 
-    public static function allToNote(string $method = 'map')
+    public static function allToDatabaseNote(string $name, string $method = 'map')
     {
-        return self::all($method)->implode(function ($value, $key) {
-            return $key . ':' . $value;
-        }, ';');
+        return $name . '[' . self::all($method)->implode(function ($value, $key) {
+            return $key.':'.$value;
+        }, ';') . ']';
     }
 
     /**

@@ -37,7 +37,7 @@ class BlueprintMacro
     {
         return function (): Fluent {
             /** @var \Illuminate\Database\Schema\Blueprint $this */
-            return $this->tinyInteger('status')->default(1);
+            return $this->tinyInteger('status')->default(1)->nullable();
         };
     }
 

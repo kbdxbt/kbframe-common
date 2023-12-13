@@ -52,7 +52,7 @@ class BlueprintMacro
 
     public function extJson(): callable
     {
-        return function (string $column = 'ext'): Fluent {
+        return function (string $column = 'ext_param'): Fluent {
             /** @var \Illuminate\Database\Schema\Blueprint $this */
             return $this->json($column)->nullable()->comment('附加');
         };

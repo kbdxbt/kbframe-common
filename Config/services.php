@@ -3,7 +3,7 @@
 return [
     'signer' => [
         'default' => [
-            'secret' => env('SIGNER_DEFAULT_SECRET')
+            'secret' => env('SIGNER_DEFAULT_SECRET'),
         ],
     ],
 ];

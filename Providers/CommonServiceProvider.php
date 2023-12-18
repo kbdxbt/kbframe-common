@@ -60,7 +60,7 @@ class CommonServiceProvider extends PackageServiceProvider
     {
         $package
             ->name($this->moduleName)
-            ->hasConfigFile(['config', 'notify'])
+            ->hasConfigFile(['config', 'notify', 'services'])
             ->hasCommands([
                 \Modules\Common\Console\AppInitCommand::class,
                 \Modules\Common\Console\DeployCommand::class,

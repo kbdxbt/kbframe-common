@@ -10,5 +10,6 @@
     </testsuites>
     <php>
         <env name="APP_DEBUG" value="true"/>
+        <env name="SIGNER_DEFAULT_SECRET" value="4d6qRiYGLhWOKiI8"/>
     </php>
 </phpunit>

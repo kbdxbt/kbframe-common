@@ -64,8 +64,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function defineEnvironment($app): void
     {
-        config()->set('services.signer.default.secret', '4d6qRiYGLhWOKiI8');
-
         config()->set('database.default', 'sqlite');
         config()->set('database.connections.sqlite', [
             'driver' => 'sqlite',

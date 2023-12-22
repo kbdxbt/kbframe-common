@@ -65,6 +65,7 @@ class CommonServiceProvider extends PackageServiceProvider
                 \Modules\Common\Console\AppInitCommand::class,
                 \Modules\Common\Console\DeployCommand::class,
                 \Modules\Common\Console\HealthCheckCommand::class,
+                \Modules\Common\Console\ListSchedule::class,
             ]);
     }
 

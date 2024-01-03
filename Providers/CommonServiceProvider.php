@@ -9,8 +9,11 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Contracts\Validation\DataAwareRule;
 use Illuminate\Contracts\Validation\ImplicitRule;
 use Illuminate\Contracts\Validation\ValidatorAwareRule;
+use Illuminate\Database\Connection;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Database\Events\StatementPrepared;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Database\Query\Grammars\MySqlGrammar;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,9 +22,11 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\ResponseFactory;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
+use Illuminate\Support\Traits\Conditionable;
 use Modules\Common\Http\Middleware\ProfileJsonResponse;
 use Modules\Common\Rules\Rule;
 use Modules\Common\Support\Macros\BlueprintMacro;
@@ -40,6 +45,10 @@ use Symfony\Component\Finder\Finder;
 
 class CommonServiceProvider extends PackageServiceProvider
 {
+    use Conditionable {
+        Conditionable::when as whenever;
+    }
+
     protected string $moduleName = 'Common';
 
     protected string $moduleNameLower = 'common';
@@ -79,6 +88,8 @@ class CommonServiceProvider extends PackageServiceProvider
         $this->extendValidator();
         $this->registerMiddleware($this->app['router']);
         $this->registerMacros();
+        $this->listenEvents();
+        $this->databaseQueryMonitoring();
 
         return parent::boot();
     }
@@ -179,5 +190,34 @@ class CommonServiceProvider extends PackageServiceProvider
                 }
             }
         }
+    }
+
+    /**
+     * @return void
+     * @throws \Psr\Container\ContainerExceptionInterface
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     */
+    protected function listenEvents(): void
+    {
+        $this->app->get('events')->listen(StatementPrepared::class, static function (StatementPrepared $event): void {
+            $event->statement->setFetchMode(\PDO::FETCH_ASSOC);
+        });
+
+        // $this->app->get('events')->listen(DatabaseBusy::class, static function (DatabaseBusy $event) {
+        //     Notification::route('mail', 'dev@example.com')
+        //         ->notify(new DatabaseApproachingMaxConnections(
+        //             $event->connectionName,
+        //             $event->connections
+        //         ));
+        // });
+    }
+
+    public function databaseQueryMonitoring(): void
+    {
+        $this->unless($this->app->isProduction(), static function (): void {
+            DB::whenQueryingForLongerThan(500, function (Connection $connection, QueryExecuted $event) {
+                // 通知开发团队...
+            });
+        });
     }
 }

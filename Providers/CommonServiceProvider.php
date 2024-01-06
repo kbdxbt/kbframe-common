@@ -193,7 +193,6 @@ class CommonServiceProvider extends PackageServiceProvider
     }
 
     /**
-     * @return void
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
      */

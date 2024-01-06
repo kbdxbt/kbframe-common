@@ -11,6 +11,7 @@ use Exception;
 class ArrayToXml
 {
     protected DOMDocument $document;
+
     protected DOMElement $rootNode;
 
     protected bool $replaceSpacesByUnderScoresInKeyNames = true;
@@ -23,14 +24,14 @@ class ArrayToXml
 
     public function __construct(
         array $array,
-        string | array $rootElement = '',
+        string|array $rootElement = '',
         bool $replaceSpacesByUnderScoresInKeyNames = true,
-        string | null $xmlEncoding = null,
+        string $xmlEncoding = null,
         string $xmlVersion = '1.0',
         array $domProperties = [],
-        bool | null $xmlStandalone = null,
+        bool $xmlStandalone = null,
         bool $addXmlDeclaration = true,
-        array | null $options = ['convertNullToXsiNil' => false]
+        ?array $options = ['convertNullToXsiNil' => false]
     ) {
         $this->document = new DOMDocument($xmlVersion, $xmlEncoding ?? '');
 
@@ -66,7 +67,7 @@ class ArrayToXml
 
     public static function convert(
         array $array,
-              $rootElement = '',
+        $rootElement = '',
         bool $replaceSpacesByUnderScoresInKeyNames = true,
         string $xmlEncoding = null,
         string $xmlVersion = '1.0',
@@ -253,7 +254,7 @@ class ArrayToXml
         $element->parentNode->appendChild($child);
     }
 
-    protected function isArrayAllKeySequential(array | string | null $value): bool
+    protected function isArrayAllKeySequential(array|string|null $value): bool
     {
         if (! is_array($value)) {
             return false;

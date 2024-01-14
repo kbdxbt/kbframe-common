@@ -30,23 +30,21 @@ class CurlFormatter
     protected $commandLineLength;
 
     /**
-     * @param int $commandLineLength
+     * @param  int  $commandLineLength
      */
-    function __construct($commandLineLength =  100)
+    public function __construct($commandLineLength = 100)
     {
         $this->commandLineLength = $commandLineLength;
     }
 
     /**
-     * @param RequestInterface $request
-     * @param array            $options
      * @return string
      */
     public function format(RequestInterface $request, array $options = [])
     {
-        $this->command           = 'curl';
+        $this->command = 'curl';
         $this->currentLineLength = strlen($this->command);
-        $this->options           = [];
+        $this->options = [];
 
         $this->extractArguments($request, $options);
         $this->addOptionsToCommand();
@@ -55,8 +53,7 @@ class CurlFormatter
     }
 
     /**
-     * @param int $commandLineLength
-     *
+     * @param  int  $commandLineLength
      * @return void
      */
     public function setCommandLineLength($commandLineLength)
@@ -65,16 +62,15 @@ class CurlFormatter
     }
 
     /**
-     * @param mixed $name
-     * @param mixed|null $value
-     *
+     * @param  mixed  $name
+     * @param  mixed|null  $value
      * @return void
      */
     protected function addOption($name, $value = null)
     {
         if (isset($this->options[$name])) {
-            if (!is_array($this->options[$name])) {
-                $this->options[$name] = (array)$this->options[$name];
+            if (! is_array($this->options[$name])) {
+                $this->options[$name] = (array) $this->options[$name];
             }
 
             $this->options[$name][] = $value;
@@ -85,8 +81,7 @@ class CurlFormatter
     }
 
     /**
-     * @param mixed $part
-     *
+     * @param  mixed  $part
      * @return void
      */
     protected function addCommandPart($part)
@@ -103,14 +98,12 @@ class CurlFormatter
     }
 
     /**
-     * @param RequestInterface $request
-     *
      * @return void
      */
     protected function extractHttpMethodArgument(RequestInterface $request)
     {
-        if ('GET' !== $request->getMethod() ) {
-            if ('HEAD' === $request->getMethod()) {
+        if ($request->getMethod() !== 'GET') {
+            if ($request->getMethod() === 'HEAD') {
                 $this->addOption('-head');
             } else {
                 $this->addOption('X', $request->getMethod());
@@ -119,8 +112,6 @@ class CurlFormatter
     }
 
     /**
-     * @param RequestInterface $request
-     *
      * @return void
      */
     protected function extractBodyArgument(RequestInterface $request)
@@ -145,34 +136,31 @@ class CurlFormatter
         }
 
         //if get request has data Add G otherwise curl will make a post request
-        if (!empty($this->options['d']) && ('GET' === $request->getMethod())){
+        if (! empty($this->options['d']) && ($request->getMethod() === 'GET')) {
             $this->addOption('G');
         }
     }
 
     /**
-     * @param RequestInterface $request
-     * @param array            $options
-     *
      * @return void
      */
     protected function extractCookiesArgument(RequestInterface $request, array $options)
     {
-        if (!isset($options['cookies']) || !$options['cookies'] instanceof CookieJarInterface) {
+        if (! isset($options['cookies']) || ! $options['cookies'] instanceof CookieJarInterface) {
             return;
         }
 
         $values = [];
         $scheme = $request->getUri()->getScheme();
-        $host   = $request->getUri()->getHost();
-        $path   = $request->getUri()->getPath();
+        $host = $request->getUri()->getHost();
+        $path = $request->getUri()->getPath();
 
         /** @var SetCookie $cookie */
         foreach ($options['cookies'] as $cookie) {
             if ($cookie->matchesPath($path) && $cookie->matchesDomain($host) &&
-                ! $cookie->isExpired() && ( ! $cookie->getSecure() || $scheme === 'https')) {
+                ! $cookie->isExpired() && (! $cookie->getSecure() || $scheme === 'https')) {
 
-                $values[] = $cookie->getName() . '=' . $cookie->getValue();
+                $values[] = $cookie->getName().'='.$cookie->getValue();
             }
         }
 
@@ -182,23 +170,22 @@ class CurlFormatter
     }
 
     /**
-     * @param RequestInterface $request
-     *
      * @return void
      */
     protected function extractHeadersArgument(RequestInterface $request)
     {
         foreach ($request->getHeaders() as $name => $header) {
-            if ('host' === strtolower($name) && $header[0] === $request->getUri()->getHost()) {
+            if (strtolower($name) === 'host' && $header[0] === $request->getUri()->getHost()) {
                 continue;
             }
 
-            if ('user-agent' === strtolower($name)) {
+            if (strtolower($name) === 'user-agent') {
                 $this->addOption('A', $this->escapeShellArgument($header[0]));
+
                 continue;
             }
 
-            foreach ((array)$header as $headerValue) {
+            foreach ((array) $header as $headerValue) {
                 $this->addOption('H', $this->escapeShellArgument("{$name}: {$headerValue}"));
             }
         }
@@ -225,9 +212,6 @@ class CurlFormatter
     }
 
     /**
-     * @param RequestInterface $request
-     * @param array            $options
-     *
      * @return void
      */
     protected function extractArguments(RequestInterface $request, array $options)
@@ -240,18 +224,17 @@ class CurlFormatter
     }
 
     /**
-     * @param RequestInterface $request
-     *
      * @return void
      */
     protected function extractUrlArgument(RequestInterface $request)
     {
-        $this->addCommandPart($this->escapeShellArgument((string)$request->getUri()->withFragment('')));
+        $this->addCommandPart($this->escapeShellArgument((string) $request->getUri()->withFragment('')));
     }
 
     protected function escapeShellArgument($argument)
     {
         $process = new Process([$argument]);
+
         return $process->getCommandLine();
     }
 }

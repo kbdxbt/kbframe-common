@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
 use Modules\Common\Models\HttpLog;
+use Modules\Common\Support\CurlFormatter;
 
 class LogHttp
 {
@@ -119,6 +120,7 @@ class LogHttp
             'response_body' => substr((string) $response->getContent(), 0, $maxLengthOfMediumtext),
             'response_time' => (string) microtime(true),
             'duration' => substr($this->calculateDuration(), 0, 10),
+            'curl_text' => (new CurlFormatter($maxLengthOfMediumtext))->format($response->getRequest()),
             'ext' => [],
         ];
     }

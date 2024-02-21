@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * WizardStep
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class WizardStep extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -104,9 +104,6 @@ class WizardStep extends BaseRenderer
         return $this->set('columnCount', $value);
     }
 
-    /**
-     *
-     */
     public function data($value = '')
     {
         return $this->set('data', $value);
@@ -168,9 +165,6 @@ class WizardStep extends BaseRenderer
         return $this->set('feedback', $value);
     }
 
-    /**
-     *
-     */
     public function fieldSet($value = '')
     {
         return $this->set('fieldSet', $value);
@@ -296,9 +290,6 @@ class WizardStep extends BaseRenderer
         return $this->set('jumpableOn', $value);
     }
 
-    /**
-     *
-     */
     public function label($value = '')
     {
         return $this->set('label', $value);
@@ -336,9 +327,6 @@ class WizardStep extends BaseRenderer
         return $this->set('mode', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -408,17 +396,11 @@ class WizardStep extends BaseRenderer
         return $this->set('promptPageLeaveMessage', $value);
     }
 
-    /**
-     *
-     */
     public function redirect($value = '')
     {
         return $this->set('redirect', $value);
     }
 
-    /**
-     *
-     */
     public function reload($value = '')
     {
         return $this->set('reload', $value);
@@ -456,9 +438,6 @@ class WizardStep extends BaseRenderer
         return $this->set('static', $value);
     }
 
-    /**
-     *
-     */
     public function staticClassName($value = '')
     {
         return $this->set('staticClassName', $value);
@@ -480,9 +459,6 @@ class WizardStep extends BaseRenderer
         return $this->set('staticLabelClassName', $value);
     }
 
-    /**
-     *
-     */
     public function staticOn($value = '')
     {
         return $this->set('staticOn', $value);
@@ -496,9 +472,6 @@ class WizardStep extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -552,9 +525,6 @@ class WizardStep extends BaseRenderer
         return $this->set('submitText', $value);
     }
 
-    /**
-     *
-     */
     public function tabs($value = '')
     {
         return $this->set('tabs', $value);
@@ -584,9 +554,6 @@ class WizardStep extends BaseRenderer
         return $this->set('useMobileUI', $value);
     }
 
-    /**
-     *
-     */
     public function value($value = '')
     {
         return $this->set('value', $value);
@@ -615,6 +582,4 @@ class WizardStep extends BaseRenderer
     {
         return $this->set('wrapWithPanel', $value);
     }
-
-
 }

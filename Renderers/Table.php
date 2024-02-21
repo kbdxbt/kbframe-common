@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Table 表格渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/table
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Table extends BaseRenderer
@@ -311,9 +312,6 @@ class Table extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -390,6 +388,4 @@ class Table extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

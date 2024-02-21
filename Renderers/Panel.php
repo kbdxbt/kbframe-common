@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Panel渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/panel
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Panel extends BaseRenderer
@@ -207,9 +208,6 @@ class Panel extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -278,6 +276,4 @@ class Panel extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

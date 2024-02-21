@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Tag
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Tag extends BaseRenderer
@@ -191,9 +192,6 @@ class Tag extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -207,9 +205,6 @@ class Tag extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'tag')
     {
         return $this->set('type', $value);
@@ -238,6 +233,4 @@ class Tag extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

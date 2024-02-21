@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 垂直布局控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/vbox
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class VBox extends BaseRenderer
@@ -135,9 +136,6 @@ class VBox extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -151,9 +149,6 @@ class VBox extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'vbox')
     {
         return $this->set('type', $value);
@@ -182,6 +177,4 @@ class VBox extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

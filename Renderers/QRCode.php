@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 二维码展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/qrcode
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class QRCode extends BaseRenderer
@@ -191,9 +192,6 @@ class QRCode extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -238,6 +236,4 @@ class QRCode extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

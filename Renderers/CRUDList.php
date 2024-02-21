@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * CRUDList
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class CRUDList extends BaseRenderer
@@ -168,17 +169,11 @@ class CRUDList extends BaseRenderer
         return $this->set('filter', $value);
     }
 
-    /**
-     *
-     */
     public function filterDefaultVisible($value = true)
     {
         return $this->set('filterDefaultVisible', $value);
     }
 
-    /**
-     *
-     */
     public function filterTogglable($value = true)
     {
         return $this->set('filterTogglable', $value);
@@ -376,9 +371,6 @@ class CRUDList extends BaseRenderer
         return $this->set('loadDataOnceFetchOnFilter', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
@@ -392,9 +384,6 @@ class CRUDList extends BaseRenderer
         return $this->set('matchFunc', $value);
     }
 
-    /**
-     *
-     */
     public function messages($value = '')
     {
         return $this->set('messages', $value);
@@ -408,9 +397,6 @@ class CRUDList extends BaseRenderer
         return $this->set('mode', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -616,25 +602,16 @@ class CRUDList extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
     }
 
-    /**
-     *
-     */
     public function stopAutoRefreshWhen($value = '')
     {
         return $this->set('stopAutoRefreshWhen', $value);
     }
 
-    /**
-     *
-     */
     public function stopAutoRefreshWhenModalIsOpen($value = true)
     {
         return $this->set('stopAutoRefreshWhenModalIsOpen', $value);
@@ -711,6 +688,4 @@ class CRUDList extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

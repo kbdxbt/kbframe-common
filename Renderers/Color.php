@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Color 显示渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/color
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Color extends BaseRenderer
@@ -143,9 +144,6 @@ class Color extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -190,6 +188,4 @@ class Color extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * TooltipWrapper
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TooltipWrapper extends BaseRenderer
@@ -207,9 +208,6 @@ class TooltipWrapper extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -231,9 +229,6 @@ class TooltipWrapper extends BaseRenderer
         return $this->set('title', $value);
     }
 
-    /**
-     *
-     */
     public function tooltip($value = '')
     {
         return $this->set('tooltip', $value);
@@ -310,6 +305,4 @@ class TooltipWrapper extends BaseRenderer
     {
         return $this->set('wrapperComponent', $value);
     }
-
-
 }

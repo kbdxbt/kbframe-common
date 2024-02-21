@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Table View 表格展现
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TableView extends BaseRenderer
@@ -22,6 +23,4 @@ class TableView extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

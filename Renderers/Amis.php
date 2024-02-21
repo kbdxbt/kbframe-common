@@ -1658,5 +1658,4 @@ class Amis
 
         return $instance;
     }
-
 }

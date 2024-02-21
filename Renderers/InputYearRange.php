@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * InputYearRange 年份范围
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class InputYearRange extends BaseRenderer
@@ -262,6 +263,4 @@ class InputYearRange extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

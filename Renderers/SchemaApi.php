@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * SchemaApi
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class SchemaApi extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -159,6 +159,4 @@ class SchemaApi extends BaseRenderer
     {
         return $this->set('url', $value);
     }
-
-
 }

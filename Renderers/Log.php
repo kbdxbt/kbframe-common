@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Log 实时日志
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Log extends BaseRenderer
@@ -102,6 +103,4 @@ class Log extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

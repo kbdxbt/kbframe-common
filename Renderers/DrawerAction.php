@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * DrawerAction
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class DrawerAction extends BaseRenderer
@@ -264,25 +265,16 @@ class DrawerAction extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function primary($value = true)
     {
         return $this->set('primary', $value);
     }
 
-    /**
-     *
-     */
     public function redirect($value = '')
     {
         return $this->set('redirect', $value);
     }
 
-    /**
-     *
-     */
     public function reload($value = '')
     {
         return $this->set('reload', $value);
@@ -376,9 +368,6 @@ class DrawerAction extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -400,17 +389,11 @@ class DrawerAction extends BaseRenderer
         return $this->set('target', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
     }
 
-    /**
-     *
-     */
     public function tooltip($value = '')
     {
         return $this->set('tooltip', $value);
@@ -455,6 +438,4 @@ class DrawerAction extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

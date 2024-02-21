@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Spinner
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Spinner extends BaseRenderer
@@ -95,17 +96,11 @@ class Spinner extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
     }
 
-    /**
-     *
-     */
     public function mode($value = '')
     {
         return $this->set('mode', $value);
@@ -207,9 +202,6 @@ class Spinner extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -270,6 +262,4 @@ class Spinner extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * InputDatetimeRange 日期时间范围
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class InputDatetimeRange extends BaseRenderer
@@ -246,6 +247,4 @@ class InputDatetimeRange extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

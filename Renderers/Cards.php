@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Cards 卡片集合渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/card
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Cards extends BaseRenderer
@@ -31,9 +32,6 @@ class Cards extends BaseRenderer
         return $this->set('affixHeader', $value);
     }
 
-    /**
-     *
-     */
     public function card($value = '')
     {
         return $this->set('card', $value);
@@ -167,9 +165,6 @@ class Cards extends BaseRenderer
         return $this->set('itemDraggableOn', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
@@ -271,9 +266,6 @@ class Cards extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -334,6 +326,4 @@ class Cards extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

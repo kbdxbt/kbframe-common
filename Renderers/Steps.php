@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Steps
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Steps extends BaseRenderer
@@ -167,17 +168,11 @@ class Steps extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
     }
 
-    /**
-     *
-     */
     public function status($value = '')
     {
         return $this->set('status', $value);
@@ -238,6 +233,4 @@ class Steps extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

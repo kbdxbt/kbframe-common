@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Tasks 渲染器，格式说明 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/tasks
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Tasks extends BaseRenderer
@@ -15,9 +16,6 @@ class Tasks extends BaseRenderer
         $this->set('type', 'tasks');
     }
 
-    /**
-     *
-     */
     public function btnClassName($value = '')
     {
         return $this->set('btnClassName', $value);
@@ -31,9 +29,6 @@ class Tasks extends BaseRenderer
         return $this->set('btnText', $value);
     }
 
-    /**
-     *
-     */
     public function canRetryStatusCode($value = '')
     {
         return $this->set('canRetryStatusCode', $value);
@@ -79,17 +74,11 @@ class Tasks extends BaseRenderer
         return $this->set('editorSetting', $value);
     }
 
-    /**
-     *
-     */
     public function errorStatusCode($value = '')
     {
         return $this->set('errorStatusCode', $value);
     }
 
-    /**
-     *
-     */
     public function finishStatusCode($value = '')
     {
         return $this->set('finishStatusCode', $value);
@@ -119,9 +108,6 @@ class Tasks extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function initialStatusCode($value = '')
     {
         return $this->set('initialStatusCode', $value);
@@ -135,33 +121,21 @@ class Tasks extends BaseRenderer
         return $this->set('interval', $value);
     }
 
-    /**
-     *
-     */
     public function items($value = '')
     {
         return $this->set('items', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
     }
 
-    /**
-     *
-     */
     public function loadingStatusCode($value = '')
     {
         return $this->set('loadingStatusCode', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -191,9 +165,6 @@ class Tasks extends BaseRenderer
         return $this->set('reSubmitApi', $value);
     }
 
-    /**
-     *
-     */
     public function readyStatusCode($value = '')
     {
         return $this->set('readyStatusCode', $value);
@@ -271,9 +242,6 @@ class Tasks extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -366,6 +334,4 @@ class Tasks extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

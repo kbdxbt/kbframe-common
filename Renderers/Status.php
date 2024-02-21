@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 状态展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/status
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Status extends BaseRenderer
@@ -159,9 +160,6 @@ class Status extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -206,6 +204,4 @@ class Status extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

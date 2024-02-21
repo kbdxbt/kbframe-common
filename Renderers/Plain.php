@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Plain 纯文本渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/plain
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Plain extends BaseRenderer
@@ -143,9 +144,6 @@ class Plain extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -159,17 +157,11 @@ class Plain extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function text($value = '')
     {
         return $this->set('text', $value);
     }
 
-    /**
-     *
-     */
     public function tpl($value = '')
     {
         return $this->set('tpl', $value);
@@ -206,6 +198,4 @@ class Plain extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

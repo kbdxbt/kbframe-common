@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * Step
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Step extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -144,9 +144,6 @@ class Step extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -184,9 +181,6 @@ class Step extends BaseRenderer
         return $this->set('useMobileUI', $value);
     }
 
-    /**
-     *
-     */
     public function value($value = '')
     {
         return $this->set('value', $value);
@@ -207,6 +201,4 @@ class Step extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

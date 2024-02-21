@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * GridColumn
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class GridColumn extends BaseRenderer
@@ -13,12 +14,8 @@ class GridColumn extends BaseRenderer
     public function __construct()
     {
 
-
     }
 
-    /**
-     *
-     */
     public function body($value = '')
     {
         return $this->set('body', $value);
@@ -95,6 +92,4 @@ class GridColumn extends BaseRenderer
     {
         return $this->set('xs', $value);
     }
-
-
 }

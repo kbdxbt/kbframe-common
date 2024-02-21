@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * RangeControl
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class RangeControl extends BaseRenderer
@@ -47,9 +48,6 @@ class RangeControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -383,9 +381,6 @@ class RangeControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -479,9 +474,6 @@ class RangeControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -518,6 +510,4 @@ class RangeControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

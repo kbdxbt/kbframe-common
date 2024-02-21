@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Calendar
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Calendar extends BaseRenderer
@@ -159,9 +160,6 @@ class Calendar extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -214,6 +212,4 @@ class Calendar extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

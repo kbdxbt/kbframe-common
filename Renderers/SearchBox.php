@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 搜索框渲染器
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class SearchBox extends BaseRenderer
@@ -191,9 +192,6 @@ class SearchBox extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -238,6 +236,4 @@ class SearchBox extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

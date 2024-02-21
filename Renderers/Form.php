@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Form 表单渲染器。说明：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/index
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Form extends BaseRenderer
@@ -103,9 +104,6 @@ class Form extends BaseRenderer
         return $this->set('columnCount', $value);
     }
 
-    /**
-     *
-     */
     public function data($value = '')
     {
         return $this->set('data', $value);
@@ -159,9 +157,6 @@ class Form extends BaseRenderer
         return $this->set('feedback', $value);
     }
 
-    /**
-     *
-     */
     public function fieldSet($value = '')
     {
         return $this->set('fieldSet', $value);
@@ -295,9 +290,6 @@ class Form extends BaseRenderer
         return $this->set('mode', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -367,17 +359,11 @@ class Form extends BaseRenderer
         return $this->set('promptPageLeaveMessage', $value);
     }
 
-    /**
-     *
-     */
     public function redirect($value = '')
     {
         return $this->set('redirect', $value);
     }
 
-    /**
-     *
-     */
     public function reload($value = '')
     {
         return $this->set('reload', $value);
@@ -415,9 +401,6 @@ class Form extends BaseRenderer
         return $this->set('static', $value);
     }
 
-    /**
-     *
-     */
     public function staticClassName($value = '')
     {
         return $this->set('staticClassName', $value);
@@ -439,9 +422,6 @@ class Form extends BaseRenderer
         return $this->set('staticLabelClassName', $value);
     }
 
-    /**
-     *
-     */
     public function staticOn($value = '')
     {
         return $this->set('staticOn', $value);
@@ -455,9 +435,6 @@ class Form extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -503,9 +480,6 @@ class Form extends BaseRenderer
         return $this->set('submitText', $value);
     }
 
-    /**
-     *
-     */
     public function tabs($value = '')
     {
         return $this->set('tabs', $value);
@@ -566,6 +540,4 @@ class Form extends BaseRenderer
     {
         return $this->set('wrapWithPanel', $value);
     }
-
-
 }

@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * Option
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Option extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -111,6 +111,4 @@ class Option extends BaseRenderer
     {
         return $this->set('visible', $value);
     }
-
-
 }

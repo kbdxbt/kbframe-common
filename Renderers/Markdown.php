@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Markdown 渲染
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Markdown extends BaseRenderer
@@ -54,6 +55,4 @@ class Markdown extends BaseRenderer
     {
         return $this->set('value', $value);
     }
-
-
 }

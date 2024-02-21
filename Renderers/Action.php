@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Action 行为按钮 https://aisuda.bce.baidu.com/amis/zh-CN/components/action
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Action extends BaseRenderer
@@ -39,9 +40,6 @@ class Action extends BaseRenderer
         return $this->set('activeLevel', $value);
     }
 
-    /**
-     *
-     */
     public function api($value = '')
     {
         return $this->set('api', $value);
@@ -111,9 +109,6 @@ class Action extends BaseRenderer
         return $this->set('level', $value);
     }
 
-    /**
-     *
-     */
     public function link($value = '')
     {
         return $this->set('link', $value);
@@ -182,6 +177,4 @@ class Action extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

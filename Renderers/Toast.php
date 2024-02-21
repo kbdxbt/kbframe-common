@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * Toast 轻提示
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Toast extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -79,6 +79,4 @@ class Toast extends BaseRenderer
     {
         return $this->set('title', $value);
     }
-
-
 }

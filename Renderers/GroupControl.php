@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Group 表单集合渲染器，能让多个表单在一行显示 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/group
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class GroupControl extends BaseRenderer
@@ -39,9 +40,6 @@ class GroupControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -327,9 +325,6 @@ class GroupControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -407,9 +402,6 @@ class GroupControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -446,6 +438,4 @@ class GroupControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

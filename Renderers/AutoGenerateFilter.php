@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * AutoGenerateFilter
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class AutoGenerateFilter extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -39,6 +39,4 @@ class AutoGenerateFilter extends BaseRenderer
     {
         return $this->set('showBtnToolbar', $value);
     }
-
-
 }

@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * BaseApi
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class BaseApi extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -167,6 +167,4 @@ class BaseApi extends BaseRenderer
     {
         return $this->set('url', $value);
     }
-
-
 }

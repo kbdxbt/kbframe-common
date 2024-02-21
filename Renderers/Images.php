@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 图片集展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/images
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Images extends BaseRenderer
@@ -135,9 +136,6 @@ class Images extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function options($value = '')
     {
         return $this->set('options', $value);
@@ -175,9 +173,6 @@ class Images extends BaseRenderer
         return $this->set('showToolbar', $value);
     }
 
-    /**
-     *
-     */
     public function source($value = '')
     {
         return $this->set('source', $value);
@@ -239,9 +234,6 @@ class Images extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -295,9 +287,6 @@ class Images extends BaseRenderer
         return $this->set('useMobileUI', $value);
     }
 
-    /**
-     *
-     */
     public function value($value = '')
     {
         return $this->set('value', $value);
@@ -318,6 +307,4 @@ class Images extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

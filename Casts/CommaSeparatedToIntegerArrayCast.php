@@ -8,7 +8,7 @@ use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
 class CommaSeparatedToIntegerArrayCast implements CastsAttributes
 {
-    public function get($model, $key, $value, $attributes)
+    public function get($model, $key, $value, $attributes): ?array
     {
         return $value ? array_map('intval', explode(',', $value)) : [];
     }

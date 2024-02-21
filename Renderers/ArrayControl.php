@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * InputArray 数组输入框。 combo 的别名。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/array
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ArrayControl extends BaseRenderer
@@ -95,9 +96,6 @@ class ArrayControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -495,9 +493,6 @@ class ArrayControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -591,9 +586,6 @@ class ArrayControl extends BaseRenderer
         return $this->set('typeSwitchable', $value);
     }
 
-    /**
-     *
-     */
     public function updatePristineAfterStoreDataReInit($value = true)
     {
         return $this->set('updatePristineAfterStoreDataReInit', $value);
@@ -631,9 +623,6 @@ class ArrayControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -670,6 +659,4 @@ class ArrayControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

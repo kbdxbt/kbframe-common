@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * List 列表展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/card
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ListRenderer extends BaseRenderer
@@ -263,9 +264,6 @@ class ListRenderer extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -326,6 +324,4 @@ class ListRenderer extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

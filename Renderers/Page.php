@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * amis Page 渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/page
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Page extends BaseRenderer
@@ -111,9 +112,6 @@ class Page extends BaseRenderer
         return $this->set('data', $value);
     }
 
-    /**
-     *
-     */
     public function definitions($value = '')
     {
         return $this->set('definitions', $value);
@@ -207,17 +205,11 @@ class Page extends BaseRenderer
         return $this->set('interval', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
     }
 
-    /**
-     *
-     */
     public function messages($value = '')
     {
         return $this->set('messages', $value);
@@ -231,9 +223,6 @@ class Page extends BaseRenderer
         return $this->set('mobileCSS', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -335,9 +324,6 @@ class Page extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -422,6 +408,4 @@ class Page extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

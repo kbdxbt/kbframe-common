@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Collapse 折叠渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/collapse
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Collapse extends BaseRenderer
@@ -239,9 +240,6 @@ class Collapse extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -294,6 +292,4 @@ class Collapse extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

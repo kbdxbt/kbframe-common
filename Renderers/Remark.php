@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 提示渲染器，默认会显示个小图标，鼠标放上来的时候显示配置的内容。
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Remark extends BaseRenderer
@@ -71,9 +72,6 @@ class Remark extends BaseRenderer
         return $this->set('hiddenOn', $value);
     }
 
-    /**
-     *
-     */
     public function icon($value = '')
     {
         return $this->set('icon', $value);
@@ -87,9 +85,6 @@ class Remark extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function label($value = '')
     {
         return $this->set('label', $value);
@@ -175,9 +170,6 @@ class Remark extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -199,9 +191,6 @@ class Remark extends BaseRenderer
         return $this->set('title', $value);
     }
 
-    /**
-     *
-     */
     public function tooltipClassName($value = '')
     {
         return $this->set('tooltipClassName', $value);
@@ -246,6 +235,4 @@ class Remark extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

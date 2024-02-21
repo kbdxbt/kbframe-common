@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * InputKVS 键值对象
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class InputKVS extends BaseRenderer
@@ -190,6 +191,4 @@ class InputKVS extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

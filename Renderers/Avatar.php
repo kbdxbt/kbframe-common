@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Avatar
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Avatar extends BaseRenderer
@@ -224,9 +225,6 @@ class Avatar extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -248,9 +246,6 @@ class Avatar extends BaseRenderer
         return $this->set('text', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'avatar')
     {
         return $this->set('type', $value);
@@ -279,6 +274,4 @@ class Avatar extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

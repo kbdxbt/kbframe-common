@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Repeat 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/repeat
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class RepeatControl extends BaseRenderer
@@ -31,9 +32,6 @@ class RepeatControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -207,9 +205,6 @@ class RepeatControl extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function options($value = '')
     {
         return $this->set('options', $value);
@@ -311,9 +306,6 @@ class RepeatControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -375,9 +367,6 @@ class RepeatControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -414,6 +403,4 @@ class RepeatControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

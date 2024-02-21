@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * ChartRadios 图表单选框
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ChartRadios extends BaseRenderer
@@ -46,6 +47,4 @@ class ChartRadios extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

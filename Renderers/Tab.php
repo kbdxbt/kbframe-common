@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * Tab
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Tab extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -208,9 +208,6 @@ class Tab extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -271,6 +268,4 @@ class Tab extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

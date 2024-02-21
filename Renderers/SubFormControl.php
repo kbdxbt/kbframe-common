@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * SubForm 子表单 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/subform
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class SubFormControl extends BaseRenderer
@@ -63,9 +64,6 @@ class SubFormControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -359,9 +357,6 @@ class SubFormControl extends BaseRenderer
         return $this->set('required', $value);
     }
 
-    /**
-     *
-     */
     public function scaffold($value = '')
     {
         return $this->set('scaffold', $value);
@@ -431,9 +426,6 @@ class SubFormControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -495,9 +487,6 @@ class SubFormControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -534,6 +523,4 @@ class SubFormControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

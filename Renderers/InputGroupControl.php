@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * InputGroup 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-group
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class InputGroupControl extends BaseRenderer
@@ -39,9 +40,6 @@ class InputGroupControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -311,9 +309,6 @@ class InputGroupControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -383,9 +378,6 @@ class InputGroupControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -422,6 +414,4 @@ class InputGroupControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

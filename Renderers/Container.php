@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Container 容器渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/container
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Container extends BaseRenderer
@@ -159,9 +160,6 @@ class Container extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -222,6 +220,4 @@ class Container extends BaseRenderer
     {
         return $this->set('wrapperComponent', $value);
     }
-
-
 }

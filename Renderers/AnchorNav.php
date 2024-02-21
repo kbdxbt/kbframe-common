@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * AnchorNav 锚点导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class AnchorNav extends BaseRenderer
@@ -167,9 +168,6 @@ class AnchorNav extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -214,6 +212,4 @@ class AnchorNav extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

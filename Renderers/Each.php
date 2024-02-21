@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Each 循环功能渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/each
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Each extends BaseRenderer
@@ -87,9 +88,6 @@ class Each extends BaseRenderer
         return $this->set('itemKeyName', $value);
     }
 
-    /**
-     *
-     */
     public function items($value = '')
     {
         return $this->set('items', $value);
@@ -111,9 +109,6 @@ class Each extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function placeholder($value = '')
     {
         return $this->set('placeholder', $value);
@@ -175,9 +170,6 @@ class Each extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -222,6 +214,4 @@ class Each extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

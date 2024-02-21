@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Icon 图标渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/icon
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Icon extends BaseRenderer
@@ -143,9 +144,6 @@ class Icon extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -159,9 +157,6 @@ class Icon extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'icon')
     {
         return $this->set('type', $value);
@@ -198,6 +193,4 @@ class Icon extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

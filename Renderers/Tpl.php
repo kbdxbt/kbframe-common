@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * tpl 渲染器
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Tpl extends BaseRenderer
@@ -71,9 +72,6 @@ class Tpl extends BaseRenderer
         return $this->set('hiddenOn', $value);
     }
 
-    /**
-     *
-     */
     public function html($value = '')
     {
         return $this->set('html', $value);
@@ -103,9 +101,6 @@ class Tpl extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function raw($value = '')
     {
         return $this->set('raw', $value);
@@ -159,9 +154,6 @@ class Tpl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -175,17 +167,11 @@ class Tpl extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function text($value = '')
     {
         return $this->set('text', $value);
     }
 
-    /**
-     *
-     */
     public function tpl($value = '')
     {
         return $this->set('tpl', $value);
@@ -230,6 +216,4 @@ class Tpl extends BaseRenderer
     {
         return $this->set('wrapperComponent', $value);
     }
-
-
 }

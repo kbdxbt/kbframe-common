@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * 表格列，不指定类型时默认为文本类型。
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TableColumn extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -199,6 +199,4 @@ class TableColumn extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

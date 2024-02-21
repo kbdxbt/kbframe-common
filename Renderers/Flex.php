@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Flex 布局
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Flex extends BaseRenderer
@@ -70,6 +71,4 @@ class Flex extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Portlet
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Portlet extends BaseRenderer
@@ -191,9 +192,6 @@ class Portlet extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -207,9 +205,6 @@ class Portlet extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function tabs($value = '')
     {
         return $this->set('tabs', $value);
@@ -278,6 +273,4 @@ class Portlet extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

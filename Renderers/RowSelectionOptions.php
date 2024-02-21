@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * RowSelectionOptions
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class RowSelectionOptions extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -31,6 +31,4 @@ class RowSelectionOptions extends BaseRenderer
     {
         return $this->set('text', $value);
     }
-
-
 }

@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * HBoxColumn
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class HBoxColumn extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -95,6 +95,4 @@ class HBoxColumn extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

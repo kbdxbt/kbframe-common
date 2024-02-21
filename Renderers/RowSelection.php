@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * RowSelection
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class RowSelection extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -79,6 +79,4 @@ class RowSelection extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

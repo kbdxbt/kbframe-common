@@ -213,11 +213,11 @@ if (! function_exists('to_transform_array')) {
         }
 
         if (is_array($value)) {
-        } else if ($value instanceof Jsonable) {
+        } elseif ($value instanceof Jsonable) {
             $value = json_decode($value->toJson(), true);
-        } else if ($value instanceof Arrayable) {
+        } elseif ($value instanceof Arrayable) {
             $value = $value->toArray();
-        } else if (is_string($value)) {
+        } elseif (is_string($value)) {
             $array = null;
 
             try {
@@ -227,7 +227,7 @@ if (! function_exists('to_transform_array')) {
 
             $value = is_array($array) ? $array : explode(',', $value);
         } else {
-            $value = (array)$value;
+            $value = (array) $value;
         }
 
         return $filter ? array_filter($value, function ($v) {
@@ -352,18 +352,19 @@ if (! function_exists('array_map_with_keys')) {
     }
 }
 
-if (!function_exists('array2tree')) {
+if (! function_exists('array2tree')) {
     function array2tree(array $list, int $parentId = 0): array
     {
         $data = [];
         foreach ($list as $key => $item) {
             if ($item['parent_id'] == $parentId) {
-                $children = array2tree($list, (int)$item['id']);
-                !empty($children) && $item['children'] = $children;
+                $children = array2tree($list, (int) $item['id']);
+                ! empty($children) && $item['children'] = $children;
                 $data[] = $item;
                 unset($list[$key]);
             }
         }
+
         return $data;
     }
 }

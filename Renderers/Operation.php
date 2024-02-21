@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 操作栏渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/operation
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Operation extends BaseRenderer
@@ -15,9 +16,6 @@ class Operation extends BaseRenderer
         $this->set('type', 'operation');
     }
 
-    /**
-     *
-     */
     public function buttons($value = '')
     {
         return $this->set('buttons', $value);
@@ -151,9 +149,6 @@ class Operation extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -198,6 +193,4 @@ class Operation extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

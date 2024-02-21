@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Password
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Password extends BaseRenderer
@@ -135,9 +136,6 @@ class Password extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -151,9 +149,6 @@ class Password extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'password')
     {
         return $this->set('type', $value);
@@ -182,6 +177,4 @@ class Password extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

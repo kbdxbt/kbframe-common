@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * TimelineItem
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TimelineItem extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -184,9 +184,6 @@ class TimelineItem extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -255,6 +252,4 @@ class TimelineItem extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

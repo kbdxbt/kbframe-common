@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Wrapper 容器渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/wrapper
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Wrapper extends BaseRenderer
@@ -143,9 +144,6 @@ class Wrapper extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -191,13 +189,8 @@ class Wrapper extends BaseRenderer
         return $this->set('visibleOn', $value);
     }
 
-    /**
-     *
-     */
     public function wrap($value = true)
     {
         return $this->set('wrap', $value);
     }
-
-
 }

@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * Expandable
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Expandable extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -63,6 +63,4 @@ class Expandable extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 数字输入框 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-number
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class NumberControl extends BaseRenderer
@@ -47,9 +48,6 @@ class NumberControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -383,9 +381,6 @@ class NumberControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -471,9 +466,6 @@ class NumberControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -510,6 +502,4 @@ class NumberControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

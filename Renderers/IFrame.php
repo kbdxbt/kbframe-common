@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * IFrame 渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/iframe
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class IFrame extends BaseRenderer
@@ -15,9 +16,6 @@ class IFrame extends BaseRenderer
         $this->set('type', 'iframe');
     }
 
-    /**
-     *
-     */
     public function allow($value = '')
     {
         return $this->set('allow', $value);
@@ -63,9 +61,6 @@ class IFrame extends BaseRenderer
         return $this->set('events', $value);
     }
 
-    /**
-     *
-     */
     public function height($value = '')
     {
         return $this->set('height', $value);
@@ -95,9 +90,6 @@ class IFrame extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -119,9 +111,6 @@ class IFrame extends BaseRenderer
         return $this->set('referrerpolicy', $value);
     }
 
-    /**
-     *
-     */
     public function sandbox($value = '')
     {
         return $this->set('sandbox', $value);
@@ -183,9 +172,6 @@ class IFrame extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -199,9 +185,6 @@ class IFrame extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'iframe')
     {
         return $this->set('type', $value);
@@ -231,13 +214,8 @@ class IFrame extends BaseRenderer
         return $this->set('visibleOn', $value);
     }
 
-    /**
-     *
-     */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

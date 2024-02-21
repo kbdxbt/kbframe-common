@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * GridNav 宫格导航
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class GridNav extends BaseRenderer
@@ -126,6 +127,4 @@ class GridNav extends BaseRenderer
     {
         return $this->set('value', $value);
     }
-
-
 }

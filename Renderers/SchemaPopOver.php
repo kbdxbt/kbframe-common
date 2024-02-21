@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * SchemaPopOver
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class SchemaPopOver extends BaseRenderer
@@ -13,12 +14,8 @@ class SchemaPopOver extends BaseRenderer
     public function __construct()
     {
 
-
     }
 
-    /**
-     *
-     */
     public function body($value = '')
     {
         return $this->set('body', $value);
@@ -103,6 +100,4 @@ class SchemaPopOver extends BaseRenderer
     {
         return $this->set('trigger', $value);
     }
-
-
 }

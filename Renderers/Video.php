@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 视频播放器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/video
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Video extends BaseRenderer
@@ -247,9 +248,6 @@ class Video extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -310,6 +308,4 @@ class Video extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

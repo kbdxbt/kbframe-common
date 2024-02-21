@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Button Toolar 渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/button-toolbar
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ButtonToolbar extends BaseRenderer
@@ -15,9 +16,6 @@ class ButtonToolbar extends BaseRenderer
         $this->set('type', 'button-toolbar');
     }
 
-    /**
-     *
-     */
     public function buttons($value = '')
     {
         return $this->set('buttons', $value);
@@ -135,9 +133,6 @@ class ButtonToolbar extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -182,6 +177,4 @@ class ButtonToolbar extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

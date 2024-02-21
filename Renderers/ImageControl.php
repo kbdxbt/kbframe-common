@@ -8,6 +8,7 @@ use Modules\Common\Traits\UploadTrait;
  * Image 图片上传控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/image
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ImageControl extends BaseRenderer
@@ -93,25 +94,16 @@ class ImageControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function compress($value = true)
     {
         return $this->set('compress', $value);
     }
 
-    /**
-     *
-     */
     public function compressOptions($value = '')
     {
         return $this->set('compressOptions', $value);
     }
 
-    /**
-     *
-     */
     public function crop($value = '')
     {
         return $this->set('crop', $value);
@@ -141,9 +133,6 @@ class ImageControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -581,9 +570,6 @@ class ImageControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -669,9 +655,6 @@ class ImageControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -708,6 +691,4 @@ class ImageControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

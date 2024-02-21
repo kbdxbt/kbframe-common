@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Static 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/static
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class StaticExactControl extends BaseRenderer
@@ -47,9 +48,6 @@ class StaticExactControl extends BaseRenderer
         return $this->set('copyable', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -335,9 +333,6 @@ class StaticExactControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -415,9 +410,6 @@ class StaticExactControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -454,6 +446,4 @@ class StaticExactControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

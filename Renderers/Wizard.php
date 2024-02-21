@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 表单向导 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/wizard
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Wizard extends BaseRenderer
@@ -159,9 +160,6 @@ class Wizard extends BaseRenderer
         return $this->set('initApi', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
@@ -175,9 +173,6 @@ class Wizard extends BaseRenderer
         return $this->set('mode', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -207,17 +202,11 @@ class Wizard extends BaseRenderer
         return $this->set('redirect', $value);
     }
 
-    /**
-     *
-     */
     public function reload($value = '')
     {
         return $this->set('reload', $value);
     }
 
-    /**
-     *
-     */
     public function startStep($value = '')
     {
         return $this->set('startStep', $value);
@@ -271,9 +260,6 @@ class Wizard extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -287,9 +273,6 @@ class Wizard extends BaseRenderer
         return $this->set('stepClassName', $value);
     }
 
-    /**
-     *
-     */
     public function steps($value = '')
     {
         return $this->set('steps', $value);
@@ -358,6 +341,4 @@ class Wizard extends BaseRenderer
     {
         return $this->set('wrapWithPanel', $value);
     }
-
-
 }

@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Tree 下拉选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/tree
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TreeControl extends BaseRenderer
@@ -143,9 +144,6 @@ class TreeControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -319,9 +317,6 @@ class TreeControl extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function initAutoFill($value = '')
     {
         return $this->set('initAutoFill', $value);
@@ -663,9 +658,6 @@ class TreeControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -727,9 +719,6 @@ class TreeControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -782,6 +771,4 @@ class TreeControl extends BaseRenderer
     {
         return $this->set('withChildren', $value);
     }
-
-
 }

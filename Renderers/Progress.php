@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 进度展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/progress
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Progress extends BaseRenderer
@@ -208,9 +209,6 @@ class Progress extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -248,9 +246,6 @@ class Progress extends BaseRenderer
         return $this->set('threshold', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'progress')
     {
         return $this->set('type', $value);
@@ -295,6 +290,4 @@ class Progress extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

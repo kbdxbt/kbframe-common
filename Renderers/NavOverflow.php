@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * NavOverflow
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class NavOverflow extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -103,6 +103,4 @@ class NavOverflow extends BaseRenderer
     {
         return $this->set('wrapperComponent', $value);
     }
-
-
 }

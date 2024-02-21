@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * CollapseGroup 折叠渲染器，格式说明。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/collapse
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class CollapseGroup extends BaseRenderer
@@ -175,9 +176,6 @@ class CollapseGroup extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -222,6 +220,4 @@ class CollapseGroup extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

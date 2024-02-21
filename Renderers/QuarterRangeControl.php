@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * QuarterRange 季度范围控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/input-quarter-range
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class QuarterRangeControl extends BaseRenderer
@@ -55,9 +56,6 @@ class QuarterRangeControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -431,9 +429,6 @@ class QuarterRangeControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -463,9 +458,6 @@ class QuarterRangeControl extends BaseRenderer
         return $this->set('transform', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'input-quarter-range')
     {
         return $this->set('type', $value);
@@ -503,9 +495,6 @@ class QuarterRangeControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -550,6 +539,4 @@ class QuarterRangeControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

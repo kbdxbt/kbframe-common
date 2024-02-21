@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * SparkLine
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class SparkLine extends BaseRenderer
@@ -159,9 +160,6 @@ class SparkLine extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -175,9 +173,6 @@ class SparkLine extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'sparkline')
     {
         return $this->set('type', $value);
@@ -191,9 +186,6 @@ class SparkLine extends BaseRenderer
         return $this->set('useMobileUI', $value);
     }
 
-    /**
-     *
-     */
     public function value($value = '')
     {
         return $this->set('value', $value);
@@ -222,6 +214,4 @@ class SparkLine extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

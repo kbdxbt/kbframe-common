@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * NavItem
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class NavItem extends BaseRenderer
@@ -13,52 +14,33 @@ class NavItem extends BaseRenderer
     public function __construct()
     {
 
-
     }
 
-    /**
-     *
-     */
     public function active($value = true)
     {
         return $this->set('active', $value);
     }
 
-    /**
-     *
-     */
     public function children($value = '')
     {
         return $this->set('children', $value);
     }
 
-    /**
-     *
-     */
     public function className($value = '')
     {
         return $this->set('className', $value);
     }
 
-    /**
-     *
-     */
     public function defer($value = true)
     {
         return $this->set('defer', $value);
     }
 
-    /**
-     *
-     */
     public function deferApi($value = '')
     {
         return $this->set('deferApi', $value);
     }
 
-    /**
-     *
-     */
     public function disabled($value = true)
     {
         return $this->set('disabled', $value);
@@ -72,9 +54,6 @@ class NavItem extends BaseRenderer
         return $this->set('disabledOn', $value);
     }
 
-    /**
-     *
-     */
     public function disabledTip($value = '')
     {
         return $this->set('disabledTip', $value);
@@ -120,9 +99,6 @@ class NavItem extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function key($value = '')
     {
         return $this->set('key', $value);
@@ -136,9 +112,6 @@ class NavItem extends BaseRenderer
         return $this->set('label', $value);
     }
 
-    /**
-     *
-     */
     public function mode($value = '')
     {
         return $this->set('mode', $value);
@@ -200,9 +173,6 @@ class NavItem extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -216,25 +186,16 @@ class NavItem extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function target($value = '')
     {
         return $this->set('target', $value);
     }
 
-    /**
-     *
-     */
     public function to($value = '')
     {
         return $this->set('to', $value);
     }
 
-    /**
-     *
-     */
     public function unfolded($value = true)
     {
         return $this->set('unfolded', $value);
@@ -263,6 +224,4 @@ class NavItem extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

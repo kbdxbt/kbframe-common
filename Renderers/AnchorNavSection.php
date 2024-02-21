@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * AnchorNavSection 锚点区域渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/anchor-nav
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class AnchorNavSection extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -152,9 +152,6 @@ class AnchorNavSection extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -199,6 +196,4 @@ class AnchorNavSection extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

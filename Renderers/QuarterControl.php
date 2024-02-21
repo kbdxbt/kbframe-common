@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 季度选择控件
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class QuarterControl extends BaseRenderer
@@ -47,9 +48,6 @@ class QuarterControl extends BaseRenderer
         return $this->set('clearable', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -367,9 +365,6 @@ class QuarterControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -439,9 +434,6 @@ class QuarterControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -486,6 +478,4 @@ class QuarterControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

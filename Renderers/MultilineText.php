@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * MultilineText
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class MultilineText extends BaseRenderer
@@ -151,9 +152,6 @@ class MultilineText extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -175,9 +173,6 @@ class MultilineText extends BaseRenderer
         return $this->set('text', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'multiline-text')
     {
         return $this->set('type', $value);
@@ -206,6 +201,4 @@ class MultilineText extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

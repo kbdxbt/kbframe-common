@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * CopyAction
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class CopyAction extends BaseRenderer
@@ -248,9 +249,6 @@ class CopyAction extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function primary($value = true)
     {
         return $this->set('primary', $value);
@@ -344,9 +342,6 @@ class CopyAction extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -368,17 +363,11 @@ class CopyAction extends BaseRenderer
         return $this->set('target', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
     }
 
-    /**
-     *
-     */
     public function tooltip($value = '')
     {
         return $this->set('tooltip', $value);
@@ -423,6 +412,4 @@ class CopyAction extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

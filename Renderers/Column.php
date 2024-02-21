@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * Column
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Column extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -176,13 +176,8 @@ class Column extends BaseRenderer
         return $this->set('type', $value);
     }
 
-    /**
-     *
-     */
     public function width($value = '')
     {
         return $this->set('width', $value);
     }
-
-
 }

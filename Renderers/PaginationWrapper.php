@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 分页容器功能性渲染器。详情请见：https://aisuda.bce.baidu.com/amis/zh-CN/components/pagination-wrapper
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class PaginationWrapper extends BaseRenderer
@@ -183,9 +184,6 @@ class PaginationWrapper extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -230,6 +228,4 @@ class PaginationWrapper extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

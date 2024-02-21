@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * ToastAction
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ToastAction extends BaseRenderer
@@ -240,9 +241,6 @@ class ToastAction extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function primary($value = true)
     {
         return $this->set('primary', $value);
@@ -336,9 +334,6 @@ class ToastAction extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -360,9 +355,6 @@ class ToastAction extends BaseRenderer
         return $this->set('target', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
@@ -376,9 +368,6 @@ class ToastAction extends BaseRenderer
         return $this->set('toast', $value);
     }
 
-    /**
-     *
-     */
     public function tooltip($value = '')
     {
         return $this->set('tooltip', $value);
@@ -423,6 +412,4 @@ class ToastAction extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

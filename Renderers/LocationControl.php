@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Location 选点组件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/location
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class LocationControl extends BaseRenderer
@@ -47,9 +48,6 @@ class LocationControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -335,9 +333,6 @@ class LocationControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -399,9 +394,6 @@ class LocationControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -446,6 +438,4 @@ class LocationControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

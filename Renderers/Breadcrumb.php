@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Breadcrumb 面包屑 https://aisuda.bce.baidu.com/amis/zh-CN/components/breadcrumb
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Breadcrumb extends BaseRenderer
@@ -102,6 +103,4 @@ class Breadcrumb extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

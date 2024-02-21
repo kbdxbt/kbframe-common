@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * ListItem
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ListItem extends BaseRenderer
@@ -13,12 +14,8 @@ class ListItem extends BaseRenderer
     public function __construct()
     {
 
-
     }
 
-    /**
-     *
-     */
     public function actions($value = '')
     {
         return $this->set('actions', $value);
@@ -176,9 +173,6 @@ class ListItem extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -231,6 +225,4 @@ class ListItem extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

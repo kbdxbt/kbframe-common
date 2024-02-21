@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * CRUD2Cards
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class CRUD2Cards extends BaseRenderer
@@ -56,9 +57,6 @@ class CRUD2Cards extends BaseRenderer
         return $this->set('autoJumpToTopOnPagerChange', $value);
     }
 
-    /**
-     *
-     */
     public function card($value = '')
     {
         return $this->set('card', $value);
@@ -264,9 +262,6 @@ class CRUD2Cards extends BaseRenderer
         return $this->set('loadType', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
@@ -296,9 +291,6 @@ class CRUD2Cards extends BaseRenderer
         return $this->set('multiple', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -480,17 +472,11 @@ class CRUD2Cards extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
     }
 
-    /**
-     *
-     */
     public function stopAutoRefreshWhen($value = '')
     {
         return $this->set('stopAutoRefreshWhen', $value);
@@ -567,6 +553,4 @@ class CRUD2Cards extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

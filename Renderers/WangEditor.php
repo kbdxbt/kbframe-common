@@ -8,6 +8,7 @@ use Modules\Common\Traits\UploadTrait;
  * WangEditor
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class WangEditor extends BaseRenderer
@@ -292,6 +293,4 @@ class WangEditor extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

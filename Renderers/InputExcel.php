@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * InputExcel 解析 Excel
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class InputExcel extends BaseRenderer
@@ -222,6 +223,4 @@ class InputExcel extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

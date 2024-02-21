@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 条件组合控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/condition-builder
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ConditionBuilderControl extends BaseRenderer
@@ -15,9 +16,6 @@ class ConditionBuilderControl extends BaseRenderer
         $this->set('type', 'condition-builder');
     }
 
-    /**
-     *
-     */
     public function addBtnVisibleOn($value = '')
     {
         return $this->set('addBtnVisibleOn', $value);
@@ -63,9 +61,6 @@ class ConditionBuilderControl extends BaseRenderer
         return $this->set('config', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -399,9 +394,6 @@ class ConditionBuilderControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -463,9 +455,6 @@ class ConditionBuilderControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -502,6 +491,4 @@ class ConditionBuilderControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

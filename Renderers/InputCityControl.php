@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * City 城市选择框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/city
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class InputCityControl extends BaseRenderer
@@ -63,9 +64,6 @@ class InputCityControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -239,9 +237,6 @@ class InputCityControl extends BaseRenderer
         return $this->set('labelWidth', $value);
     }
 
-    /**
-     *
-     */
     public function loadingConfig($value = '')
     {
         return $this->set('loadingConfig', $value);
@@ -375,9 +370,6 @@ class InputCityControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -439,9 +431,6 @@ class InputCityControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -478,6 +467,4 @@ class InputCityControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

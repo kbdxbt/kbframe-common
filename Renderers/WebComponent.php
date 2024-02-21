@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Web Component
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class WebComponent extends BaseRenderer
@@ -46,6 +47,4 @@ class WebComponent extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

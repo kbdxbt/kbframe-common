@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Time 时间选择控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/time
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TimeControl extends BaseRenderer
@@ -47,9 +48,6 @@ class TimeControl extends BaseRenderer
         return $this->set('clearable', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -367,9 +365,6 @@ class TimeControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -455,9 +450,6 @@ class TimeControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -502,6 +494,4 @@ class TimeControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

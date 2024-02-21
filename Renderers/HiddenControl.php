@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Hidden 隐藏域。功能性组件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/hidden
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class HiddenControl extends BaseRenderer
@@ -31,9 +32,6 @@ class HiddenControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -303,9 +301,6 @@ class HiddenControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -367,9 +362,6 @@ class HiddenControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -406,6 +398,4 @@ class HiddenControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

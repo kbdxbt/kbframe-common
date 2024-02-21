@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Link 链接展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/link
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Link extends BaseRenderer
@@ -183,9 +184,6 @@ class Link extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -230,6 +228,4 @@ class Link extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

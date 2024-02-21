@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * State
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class State extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -136,9 +136,6 @@ class State extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -183,6 +180,4 @@ class State extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

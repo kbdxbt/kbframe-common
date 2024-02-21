@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Date 展示渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/date
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Date extends BaseRenderer
@@ -167,9 +168,6 @@ class Date extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -230,6 +228,4 @@ class Date extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

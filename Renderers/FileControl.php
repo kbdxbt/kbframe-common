@@ -8,6 +8,7 @@ use Modules\Common\Traits\UploadTrait;
  * File 文件上传控件 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/file
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class FileControl extends BaseRenderer
@@ -141,9 +142,6 @@ class FileControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -557,9 +555,6 @@ class FileControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -589,9 +584,6 @@ class FileControl extends BaseRenderer
         return $this->set('templateUrl', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
@@ -653,9 +645,6 @@ class FileControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -700,6 +689,4 @@ class FileControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

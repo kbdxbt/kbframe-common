@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Watermark
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Watermark extends BaseRenderer
@@ -118,6 +119,4 @@ class Watermark extends BaseRenderer
     {
         return $this->set('zIndex', $value);
     }
-
-
 }

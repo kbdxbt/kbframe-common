@@ -6,13 +6,13 @@ namespace Modules\Common\Renderers;
  * Options 选择器表单项
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Options extends BaseRenderer
 {
     public function __construct()
     {
-
 
     }
 
@@ -255,6 +255,4 @@ class Options extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

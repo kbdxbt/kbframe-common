@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Code 代码高亮
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Code extends BaseRenderer
@@ -78,6 +79,4 @@ class Code extends BaseRenderer
     {
         return $this->set('wordWrap', $value);
     }
-
-
 }

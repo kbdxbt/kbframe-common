@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Carousel 轮播图渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/carousel
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Carousel extends BaseRenderer
@@ -159,9 +160,6 @@ class Carousel extends BaseRenderer
         return $this->set('multiple', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -239,9 +237,6 @@ class Carousel extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -302,6 +297,4 @@ class Carousel extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

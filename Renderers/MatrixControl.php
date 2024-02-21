@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Matrix 选择控件。适合做权限勾选。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/matrix
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class MatrixControl extends BaseRenderer
@@ -31,17 +32,11 @@ class MatrixControl extends BaseRenderer
         return $this->set('clearValueOnHidden', $value);
     }
 
-    /**
-     *
-     */
     public function columns($value = '')
     {
         return $this->set('columns', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -271,9 +266,6 @@ class MatrixControl extends BaseRenderer
         return $this->set('rowLabel', $value);
     }
 
-    /**
-     *
-     */
     public function rows($value = '')
     {
         return $this->set('rows', $value);
@@ -351,9 +343,6 @@ class MatrixControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -415,9 +404,6 @@ class MatrixControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -454,6 +440,4 @@ class MatrixControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

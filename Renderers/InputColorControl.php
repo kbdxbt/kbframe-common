@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Color 颜色选择框 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/color
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class InputColorControl extends BaseRenderer
@@ -55,9 +56,6 @@ class InputColorControl extends BaseRenderer
         return $this->set('closeOnSelect', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -343,9 +341,6 @@ class InputColorControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -407,9 +402,6 @@ class InputColorControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -446,6 +438,4 @@ class InputColorControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

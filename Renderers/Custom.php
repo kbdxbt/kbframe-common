@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Custom 自定义组件
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Custom extends BaseRenderer
@@ -86,6 +87,4 @@ class Custom extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

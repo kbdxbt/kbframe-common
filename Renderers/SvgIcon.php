@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * SvgIcon
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class SvgIcon extends BaseRenderer
@@ -38,6 +39,4 @@ class SvgIcon extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

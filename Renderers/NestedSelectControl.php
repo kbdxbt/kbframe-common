@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Nested Select 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/nested-select
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class NestedSelectControl extends BaseRenderer
@@ -143,9 +144,6 @@ class NestedSelectControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -287,9 +285,6 @@ class NestedSelectControl extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function initAutoFill($value = '')
     {
         return $this->set('initAutoFill', $value);
@@ -583,9 +578,6 @@ class NestedSelectControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -647,9 +639,6 @@ class NestedSelectControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -702,6 +691,4 @@ class NestedSelectControl extends BaseRenderer
     {
         return $this->set('withChildren', $value);
     }
-
-
 }

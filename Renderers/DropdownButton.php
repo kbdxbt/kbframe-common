@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 下拉按钮渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/dropdown-button
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class DropdownButton extends BaseRenderer
@@ -175,9 +176,6 @@ class DropdownButton extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function overlayPlacement($value = '')
     {
         return $this->set('overlayPlacement', $value);
@@ -247,9 +245,6 @@ class DropdownButton extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -263,9 +258,6 @@ class DropdownButton extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
@@ -310,6 +302,4 @@ class DropdownButton extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

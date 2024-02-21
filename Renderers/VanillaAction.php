@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * VanillaAction
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class VanillaAction extends BaseRenderer
@@ -15,9 +16,6 @@ class VanillaAction extends BaseRenderer
         $this->set('type', 'button');
     }
 
-    /**
-     *
-     */
     public function actionType($value = '')
     {
         return $this->set('actionType', $value);
@@ -127,9 +125,6 @@ class VanillaAction extends BaseRenderer
         return $this->set('disabledTip', $value);
     }
 
-    /**
-     *
-     */
     public function downloadFileName($value = '')
     {
         return $this->set('downloadFileName', $value);
@@ -247,9 +242,6 @@ class VanillaAction extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function primary($value = true)
     {
         return $this->set('primary', $value);
@@ -343,9 +335,6 @@ class VanillaAction extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -367,17 +356,11 @@ class VanillaAction extends BaseRenderer
         return $this->set('target', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
     }
 
-    /**
-     *
-     */
     public function tooltip($value = '')
     {
         return $this->set('tooltip', $value);
@@ -422,6 +405,4 @@ class VanillaAction extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Property 属性表
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Property extends BaseRenderer
@@ -39,9 +40,6 @@ class Property extends BaseRenderer
         return $this->set('contentStyle', $value);
     }
 
-    /**
-     *
-     */
     public function items($value = '')
     {
         return $this->set('items', $value);
@@ -102,6 +100,4 @@ class Property extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

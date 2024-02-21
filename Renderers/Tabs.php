@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 选项卡控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/tabs
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Tabs extends BaseRenderer
@@ -263,9 +264,6 @@ class Tabs extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -327,9 +325,6 @@ class Tabs extends BaseRenderer
         return $this->set('toolbar', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'tabs')
     {
         return $this->set('type', $value);
@@ -366,6 +361,4 @@ class Tabs extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

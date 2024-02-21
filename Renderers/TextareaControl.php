@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * TextArea 多行文本输入框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/textarea
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TextareaControl extends BaseRenderer
@@ -47,9 +48,6 @@ class TextareaControl extends BaseRenderer
         return $this->set('clearable', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -359,9 +357,6 @@ class TextareaControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -383,9 +378,6 @@ class TextareaControl extends BaseRenderer
         return $this->set('submitOnChange', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
@@ -431,9 +423,6 @@ class TextareaControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -470,6 +459,4 @@ class TextareaControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

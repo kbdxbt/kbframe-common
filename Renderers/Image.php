@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * 图片展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/image
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Image extends BaseRenderer
@@ -271,9 +272,6 @@ class Image extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -366,6 +364,4 @@ class Image extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

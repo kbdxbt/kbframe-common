@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Words
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Words extends BaseRenderer
@@ -183,9 +184,6 @@ class Words extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -199,9 +197,6 @@ class Words extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'words')
     {
         return $this->set('type', $value);
@@ -238,6 +233,4 @@ class Words extends BaseRenderer
     {
         return $this->set('words', $value);
     }
-
-
 }

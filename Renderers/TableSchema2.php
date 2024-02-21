@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * TableSchema2
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TableSchema2 extends BaseRenderer
@@ -359,9 +360,6 @@ class TableSchema2 extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -430,6 +428,4 @@ class TableSchema2 extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

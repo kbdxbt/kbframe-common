@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * TableControl
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class TableControl extends BaseRenderer
@@ -247,9 +248,6 @@ class TableControl extends BaseRenderer
         return $this->set('deleteConfirmText', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -719,9 +717,6 @@ class TableControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -775,9 +770,6 @@ class TableControl extends BaseRenderer
         return $this->set('toolbarClassName', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'input-table')
     {
         return $this->set('type', $value);
@@ -823,9 +815,6 @@ class TableControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -870,6 +859,4 @@ class TableControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

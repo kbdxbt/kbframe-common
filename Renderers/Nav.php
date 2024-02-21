@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Nav 导航渲染器 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/nav
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Nav extends BaseRenderer
@@ -143,9 +144,6 @@ class Nav extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function indentSize($value = '')
     {
         return $this->set('indentSize', $value);
@@ -311,9 +309,6 @@ class Nav extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -327,9 +322,6 @@ class Nav extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
@@ -374,6 +366,4 @@ class Nav extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

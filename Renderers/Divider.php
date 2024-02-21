@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Divider 分割线渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/divider
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Divider extends BaseRenderer
@@ -23,9 +24,6 @@ class Divider extends BaseRenderer
         return $this->set('className', $value);
     }
 
-    /**
-     *
-     */
     public function color($value = '')
     {
         return $this->set('color', $value);
@@ -103,9 +101,6 @@ class Divider extends BaseRenderer
         return $this->set('onEvent', $value);
     }
 
-    /**
-     *
-     */
     public function rotate($value = '')
     {
         return $this->set('rotate', $value);
@@ -159,9 +154,6 @@ class Divider extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -175,17 +167,11 @@ class Divider extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function title($value = '')
     {
         return $this->set('title', $value);
     }
 
-    /**
-     *
-     */
     public function titleClassName($value = '')
     {
         return $this->set('titleClassName', $value);
@@ -199,9 +185,6 @@ class Divider extends BaseRenderer
         return $this->set('titlePosition', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'divider')
     {
         return $this->set('type', $value);
@@ -230,6 +213,4 @@ class Divider extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

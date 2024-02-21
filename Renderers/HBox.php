@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Hbox 水平布局渲染器。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/hbox
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class HBox extends BaseRenderer
@@ -31,9 +32,6 @@ class HBox extends BaseRenderer
         return $this->set('className', $value);
     }
 
-    /**
-     *
-     */
     public function columns($value = '')
     {
         return $this->set('columns', $value);
@@ -151,9 +149,6 @@ class HBox extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -222,6 +217,4 @@ class HBox extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

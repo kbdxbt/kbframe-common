@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * JSON 数据展示控件。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/json
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Json extends BaseRenderer
@@ -199,9 +200,6 @@ class Json extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -254,6 +252,4 @@ class Json extends BaseRenderer
     {
         return $this->set('visibleOn', $value);
     }
-
-
 }

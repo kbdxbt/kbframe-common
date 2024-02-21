@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Combo 组合输入框类型 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/form/combo
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class ComboControl extends BaseRenderer
@@ -103,9 +104,6 @@ class ComboControl extends BaseRenderer
         return $this->set('delimiter', $value);
     }
 
-    /**
-     *
-     */
     public function desc($value = '')
     {
         return $this->set('desc', $value);
@@ -503,9 +501,6 @@ class ComboControl extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -599,9 +594,6 @@ class ComboControl extends BaseRenderer
         return $this->set('typeSwitchable', $value);
     }
 
-    /**
-     *
-     */
     public function updatePristineAfterStoreDataReInit($value = true)
     {
         return $this->set('updatePristineAfterStoreDataReInit', $value);
@@ -639,9 +631,6 @@ class ComboControl extends BaseRenderer
         return $this->set('validationErrors', $value);
     }
 
-    /**
-     *
-     */
     public function validations($value = '')
     {
         return $this->set('validations', $value);
@@ -678,6 +667,4 @@ class ComboControl extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Drawer 抽出式弹框。 文档：https://aisuda.bce.baidu.com/amis/zh-CN/components/drawer
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Drawer extends BaseRenderer
@@ -159,9 +160,6 @@ class Drawer extends BaseRenderer
         return $this->set('id', $value);
     }
 
-    /**
-     *
-     */
     public function name($value = '')
     {
         return $this->set('name', $value);
@@ -271,9 +269,6 @@ class Drawer extends BaseRenderer
         return $this->set('staticPlaceholder', $value);
     }
 
-    /**
-     *
-     */
     public function staticSchema($value = '')
     {
         return $this->set('staticSchema', $value);
@@ -287,9 +282,6 @@ class Drawer extends BaseRenderer
         return $this->set('style', $value);
     }
 
-    /**
-     *
-     */
     public function testid($value = '')
     {
         return $this->set('testid', $value);
@@ -303,9 +295,6 @@ class Drawer extends BaseRenderer
         return $this->set('title', $value);
     }
 
-    /**
-     *
-     */
     public function type($value = 'drawer')
     {
         return $this->set('type', $value);
@@ -342,6 +331,4 @@ class Drawer extends BaseRenderer
     {
         return $this->set('width', $value);
     }
-
-
 }

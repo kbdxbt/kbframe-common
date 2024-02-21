@@ -6,6 +6,7 @@ namespace Modules\Common\Renderers;
  * Barcode 条形码 https://aisuda.bce.baidu.com/amis/zh-CN/components/barcode
  *
  * @author  slowlyo
+ *
  * @version 6.1.0
  */
 class Barcode extends BaseRenderer
@@ -30,6 +31,4 @@ class Barcode extends BaseRenderer
     {
         return $this->set('type', $value);
     }
-
-
 }

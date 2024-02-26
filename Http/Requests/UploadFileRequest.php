@@ -9,25 +9,24 @@ use Modules\Core\Http\Requests\BaseRequest;
 
 class UploadFileRequest extends BaseRequest
 {
+    protected int $fileMaxSize = 20480;
+
     public function authorize()
     {
         return true;
     }
 
-    public function imageRules()
+    public function uploadImageRules()
     {
         return [
-            'file' => ['required', File::image()->max(20480)],
+            'file' => ['required', File::image()->max($this->fileMaxSize)],
         ];
     }
 
-    public function videoRules()
+    public function uploadFileRules()
     {
         return [
-            'file' => [
-                'required',
-                File::types(['flv', 'mp4', 'm3u8', 'ts', '3gp', 'mov', 'avi', 'wmv'])->max(20480),
-            ],
+            'file' => ['required', 'max:' . $this->fileMaxSize],
         ];
     }
 
@@ -36,7 +35,7 @@ class UploadFileRequest extends BaseRequest
         return [
             'file' => [
                 'required',
-                File::types(['doc', 'xlsx', 'xls', 'docx', 'ppt', 'odt', 'ods', 'odp'])->max(20480),
+                File::types(['doc', 'xlsx', 'xls', 'docx', 'ppt', 'odt', 'ods', 'odp'])->max($this->fileMaxSize),
             ],
         ];
     }

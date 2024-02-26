@@ -44,8 +44,12 @@ class Upload
             '{filemd5}' => md5($this->file->path()),
         ];
 
-        if (! $format && \array_key_exists('format', $config = $this->filesystem->getConfig())) {
-            $format = $config['format'];
+        if (! $format) {
+            $format = '{path}/{year}{mon}{day}/{filename}{filesha1}{.suffix}';
+
+            if (\array_key_exists('format', $config = $this->filesystem->getConfig())) {
+                $format = $config['format'];
+            }
         }
 
         return str_replace(array_keys($replaceArr), array_values($replaceArr), $format);

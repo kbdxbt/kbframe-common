@@ -117,7 +117,7 @@ if (! function_exists('is_json')) {
     /**
      * If the string is valid JSON, return true, otherwise return false
      *
-     * @param  string  $str the string to check
+     * @param  string  $str  the string to check
      * @return bool the function is_json() is returning a boolean value
      */
     function is_json(string $str): bool
@@ -143,7 +143,7 @@ if (! function_exists('array_filter_filled')) {
 }
 
 if (! function_exists('call')) {
-    function call($callback, array $parameters = [], string $defaultMethod = null): void
+    function call($callback, array $parameters = [], ?string $defaultMethod = null): void
     {
         app()->call($callback, $parameters, $defaultMethod);
     }
@@ -162,7 +162,7 @@ if (! function_exists('catch_resource_usage')) {
 }
 
 if (! function_exists('resolve_class_from')) {
-    function resolve_class_from(string $path, string $vendorPath = null, string $vendorNamespace = null): string
+    function resolve_class_from(string $path, ?string $vendorPath = null, ?string $vendorNamespace = null): string
     {
         /** @noinspection CallableParameterUseCaseInTypeContextInspection */
         $vendorPath = $vendorPath ? realpath($vendorPath) : app_path();

@@ -27,7 +27,6 @@ trait Uploadable
             ?? $request->file('wangeditor-uploaded-image')
             ?? $request->file('wangeditor-uploaded-video');
 
-
         return $this->upload($file, 'rich');
     }
 

@@ -6,9 +6,6 @@ use Composer\Autoload\ClassLoader;
 
 class Composer
 {
-    /**
-     * @var array
-     */
     protected static array $files = [];
 
     /**
@@ -31,8 +28,6 @@ class Composer
     }
 
     /**
-     * @param string|null $path
-     *
      * @return ComposerProperty
      */
     public static function parse(?string $path)
@@ -41,8 +36,6 @@ class Composer
     }
 
     /**
-     * @param  null|string  $packageName
-     * @param  null|string  $lockFile
      * @return null
      */
     public static function getVersion(?string $packageName, ?string $lockFile = null)
@@ -62,7 +55,6 @@ class Composer
     }
 
     /**
-     * @param  null|string  $path
      * @return array
      */
     public static function fromJson(?string $path)

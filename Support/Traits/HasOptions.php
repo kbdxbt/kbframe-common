@@ -102,7 +102,7 @@ trait HasOptions
      * @param  null|mixed  $default
      * @return array|mixed
      */
-    public function getOption(string $option = null, $default = null)
+    public function getOption(?string $option = null, $default = null)
     {
         if ($option === null) {
             return $this->options;
@@ -130,7 +130,7 @@ trait HasOptions
     /**
      * @return array|mixed
      */
-    public function get(string $option = null)
+    public function get(?string $option = null)
     {
         return $this->getOption($option);
     }

@@ -14,8 +14,8 @@ class ETag
     /**
      * Implement Etag support.
      *
-     * @param  \Illuminate\Http\Request  $request the HTTP request
-     * @param  \Closure  $next    closure for the response
+     * @param  \Illuminate\Http\Request  $request  the HTTP request
+     * @param  \Closure  $next  closure for the response
      */
     public function handle(Request $request, \Closure $next): mixed
     {

@@ -170,7 +170,7 @@ class HealthCheckCommand extends Command
         return $this->ok('The database timezone config check passed');
     }
 
-    protected function checkPing(string $url = null): array
+    protected function checkPing(?string $url = null): array
     {
         $url = $url ?: config('app.url');
 

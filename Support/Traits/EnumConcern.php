@@ -12,7 +12,7 @@ trait EnumConcern
     /**
      * Get all the values as a Collection.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value.
      * @return Collection Returns a Collection containing the values.
      */
     public static function all(string $method = ''): Collection
@@ -50,8 +50,8 @@ trait EnumConcern
     /**
      * Check if a specific value exists.
      *
-     * @param  string  $value The value to check for existence.
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before checking.
+     * @param  string  $value  The value to check for existence.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before checking.
      * @return bool Returns true if the value exists, false otherwise.
      */
     public static function has(string $value, string $method = ''): bool
@@ -62,7 +62,7 @@ trait EnumConcern
     /**
      * Check if a specific case (key / name) exists.
      *
-     * @param  string  $case The case (key / name) to check for existence.
+     * @param  string  $case  The case (key / name) to check for existence.
      * @return bool Returns true if the case (key / name) exists, false otherwise.
      */
     public static function caseExists(string $case): bool
@@ -73,7 +73,7 @@ trait EnumConcern
     /**
      * Check if all the given cases (keys / names) exist.
      *
-     * @param  array  $cases An array of cases (keys / names) to check for existence.
+     * @param  array  $cases  An array of cases (keys / names) to check for existence.
      * @return bool Returns true if all the cases (keys / names) exist, false otherwise.
      */
     public static function allCasesExists(array $cases): bool
@@ -84,7 +84,7 @@ trait EnumConcern
     /**
      * Check if any of the given cases (keys / names) exist.
      *
-     * @param  array  $cases An array of cases (keys / names) to check for existence.
+     * @param  array  $cases  An array of cases (keys / names) to check for existence.
      * @return bool Returns true if any of the cases (keys / names) exist, false otherwise.
      */
     public static function anyCaseExists(array $cases): bool
@@ -95,8 +95,8 @@ trait EnumConcern
     /**
      * Get the case (key / name) for a specific value.
      *
-     * @param  string  $case The value to find the case for.
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before searching.
+     * @param  string  $case  The value to find the case for.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before searching.
      * @return bool|string Returns the case (key / name) for the given value, or false if not found.
      */
     public static function caseByValue(string $case, string $method = ''): string|bool
@@ -107,8 +107,8 @@ trait EnumConcern
     /**
      * Convert all the values to a JSON string.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before conversion.
-     * @param  int  $options (optional) Bitmask of JSON encode options.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before conversion.
+     * @param  int  $options  (optional) Bitmask of JSON encode options.
      * @return string Returns a JSON representation of the values.
      */
     public static function toJson(string $method = '', int $options = 0): string
@@ -119,7 +119,7 @@ trait EnumConcern
     /**
      * Convert all the values to an array.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before conversion.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before conversion.
      * @return array Returns an array representation of the values.
      */
     public static function toArray(string $method = ''): array
@@ -130,8 +130,8 @@ trait EnumConcern
     /**
      * Convert all the values to a key-value format as a Collection.
      *
-     * @param  string  $keyAttributeName (optional) The attribute name to be used for the keys in the resulting key-value pairs.
-     * @param  string  $valueAttributeName (optional) The attribute name to be used for the values in the resulting key-value pairs.
+     * @param  string  $keyAttributeName  (optional) The attribute name to be used for the keys in the resulting key-value pairs.
+     * @param  string  $valueAttributeName  (optional) The attribute name to be used for the values in the resulting key-value pairs.
      * @return Collection Returns a Collection with key-value pairs.
      */
     public static function toKeyValueCollection(string $method = '', string $keyAttributeName = 'key', string $valueAttributeName = 'value'): Collection
@@ -147,9 +147,9 @@ trait EnumConcern
     /**
      * Convert all the values to a key-value format as an array.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before conversion.
-     * @param  string  $keyAttributeName (optional) The attribute name to be used for the keys in the resulting key-value pairs.
-     * @param  string  $valueAttributeName (optional) The attribute name to be used for the values in the resulting key-value pairs.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before conversion.
+     * @param  string  $keyAttributeName  (optional) The attribute name to be used for the keys in the resulting key-value pairs.
+     * @param  string  $valueAttributeName  (optional) The attribute name to be used for the values in the resulting key-value pairs.
      * @return array Returns an array with key-value pairs.
      */
     public static function toKeyValueArray(string $method = '', string $keyAttributeName = 'key', string $valueAttributeName = 'value'): array
@@ -160,7 +160,7 @@ trait EnumConcern
     /**
      * Get a random value from the collection of values.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before retrieval.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before retrieval.
      * @return mixed Returns a random value from the collection of values.
      */
     public static function randomValue(string $method = ''): mixed
@@ -197,7 +197,7 @@ trait EnumConcern
     /**
      * Get all the values as an array.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before conversion.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before conversion.
      * @return array Returns an array representation of the values.
      */
     public static function allToArray(string $method = ''): array
@@ -215,8 +215,8 @@ trait EnumConcern
     /**
      * Get a subset of the values as a Collection, only including the specified cases (keys).
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before filtering.
-     * @param  array  $cases The cases (keys) to include in the subset.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before filtering.
+     * @param  array  $cases  The cases (keys) to include in the subset.
      * @return Collection Returns a Collection containing the subset of values.
      */
     public static function only(array $cases = [], string $method = ''): Collection
@@ -227,8 +227,8 @@ trait EnumConcern
     /**
      * Get a subset of the values as an array, only including the specified cases (keys / names).
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before filtering.
-     * @param  array  $cases The cases (keys / names) to include in the subset.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before filtering.
+     * @param  array  $cases  The cases (keys / names) to include in the subset.
      * @return array Returns an array containing the subset of values.
      */
     public static function onlyAsArray(array $cases = [], string $method = ''): array
@@ -239,8 +239,8 @@ trait EnumConcern
     /**
      * Get a subset of the values as a Collection, excluding the specified cases (keys / names).
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before filtering.
-     * @param  array  $cases The cases (keys / names) to exclude from the subset.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before filtering.
+     * @param  array  $cases  The cases (keys / names) to exclude from the subset.
      * @return Collection Returns a Collection containing the subset of values.
      */
     public static function except(array $cases = [], string $method = ''): Collection
@@ -251,8 +251,8 @@ trait EnumConcern
     /**
      * Get a subset of the values as an array, excluding the specified cases (keys / names).
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on each value before filtering.
-     * @param  array  $cases The cases (keys / names) to exclude from the subset.
+     * @param  string  $method  (optional) If provided, the specified method will be called on each value before filtering.
+     * @param  array  $cases  The cases (keys / names) to exclude from the subset.
      * @return array Returns an array containing the subset of values.
      */
     public static function exceptAsArray(array $cases = [], string $method = ''): array
@@ -263,7 +263,7 @@ trait EnumConcern
     /**
      * Get the first value in the Enum.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on the value before retrieval.
+     * @param  string  $method  (optional) If provided, the specified method will be called on the value before retrieval.
      * @return mixed Returns the first value in the Enum.
      */
     public static function first(string $method = ''): mixed
@@ -274,7 +274,7 @@ trait EnumConcern
     /**
      * Get the last value in the Enum.
      *
-     * @param  string  $method (optional) If provided, the specified method will be called on the value before retrieval.
+     * @param  string  $method  (optional) If provided, the specified method will be called on the value before retrieval.
      * @return mixed Returns the last value in the Enum.
      */
     public static function last(string $method = ''): mixed

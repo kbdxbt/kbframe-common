@@ -26,7 +26,7 @@ class UploadFileRequest extends BaseRequest
     public function uploadFileRules()
     {
         return [
-            'file' => ['required', 'max:' . $this->fileMaxSize],
+            'file' => ['required', 'max:'.$this->fileMaxSize],
         ];
     }
 

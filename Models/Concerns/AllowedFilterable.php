@@ -21,12 +21,12 @@ use Illuminate\Support\Str;
  */
 trait AllowedFilterable
 {
-    public function scopeAllowedFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
     {
         return $this->scopeExactFilter($query, $name, $default, $internalName, $ignore);
     }
 
-    public function scopeAllowedExactFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedExactFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
     {
         if (
             (request()->has($name) || $default !== null)
@@ -42,7 +42,7 @@ trait AllowedFilterable
         return $query;
     }
 
-    public function scopeAllowedPartialFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedPartialFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
     {
         if (
             (request()->has($name) || $default !== null)
@@ -76,7 +76,7 @@ trait AllowedFilterable
         return $query;
     }
 
-    public function scopeAllowedScopeFilter(Builder $query, string $name, $default = null, string $internalName = null, $ignore = []): Builder
+    public function scopeAllowedScopeFilter(Builder $query, string $name, $default = null, ?string $internalName = null, $ignore = []): Builder
     {
         if (
             (request()->has($name) || $default !== null)
@@ -154,7 +154,7 @@ trait AllowedFilterable
         return $query;
     }
 
-    public function scopeAllowedSort(Builder $query, string $name, $default = null, string $internalName = null): Builder
+    public function scopeAllowedSort(Builder $query, string $name, $default = null, ?string $internalName = null): Builder
     {
         if (request()->hasAny([$name, '-'.$name]) || $default !== null) {
             $column = $internalName ?: $name;

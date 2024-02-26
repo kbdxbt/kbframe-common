@@ -24,9 +24,6 @@ use Illuminate\Support\Arr;
  */
 class ComposerProperty implements Arrayable
 {
-    /**
-     * @var array
-     */
     protected array $attributes = [];
 
     public function __construct(array $attributes = [])
@@ -35,7 +32,6 @@ class ComposerProperty implements Arrayable
     }
 
     /**
-     * @param $key
      * @param  null  $default
      * @return mixed
      */
@@ -45,8 +41,6 @@ class ComposerProperty implements Arrayable
     }
 
     /**
-     * @param $key
-     * @param $val
      * @return $this
      */
     public function set($key, $val)
@@ -59,7 +53,6 @@ class ComposerProperty implements Arrayable
     }
 
     /**
-     * @param $key
      * @return $this
      */
     public function delete($key)
@@ -72,7 +65,6 @@ class ComposerProperty implements Arrayable
     }
 
     /**
-     * @param $name
      * @return mixed
      */
     public function __get($name)

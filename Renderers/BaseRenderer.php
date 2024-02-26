@@ -55,8 +55,8 @@ class BaseRenderer implements \JsonSerializable
     }
 
     /**
-     * @param  string  $sign         权限标识
-     * @param  mixed  $replaceValue 无权限时替换的值
+     * @param  string  $sign  权限标识
+     * @param  mixed  $replaceValue  无权限时替换的值
      * @return $this
      */
     public function permission(string $sign, mixed $replaceValue = '')

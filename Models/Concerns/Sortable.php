@@ -44,7 +44,7 @@ trait Sortable
         return $query->orderBy($this->determineOrderColumnName(), $direction);
     }
 
-    public static function setNewOrder($ids, int $startOrder = 1, string $primaryKeyColumn = null): void
+    public static function setNewOrder($ids, int $startOrder = 1, ?string $primaryKeyColumn = null): void
     {
         if (! \is_array($ids) && ! $ids instanceof \ArrayAccess) {
             throw new \InvalidArgumentException('You must pass an array or ArrayAccess object to setNewOrder');

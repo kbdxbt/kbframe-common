@@ -7,7 +7,7 @@ use Jiannei\Response\Laravel\Support\Facades\Response;
 use Modules\Common\Http\Requests\UploadFileRequest;
 use Modules\Common\Support\Upload;
 
-trait Uploadable
+trait UploadTrait
 {
     protected string $disk = 'public';
 
